@@ -49,6 +49,7 @@ const SocialContainer = styled.div`
 
 const CopyrightContainer = styled.div`
   flex-grow: 1;
+  color: #3D3D3D;
 `;
 
 const FooterContainer = styled.footer`
