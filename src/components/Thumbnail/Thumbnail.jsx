@@ -8,6 +8,7 @@ const Thumbnail = (props) => {
   const {
     title,
     desc,
+    img,
     backgroundColor,
     color,
     boxShadowColor,
@@ -16,6 +17,27 @@ const Thumbnail = (props) => {
   const containerRef = useRef(null);
   const titleRef = useRef(null);
   const descRef = useRef(null);
+  const imgRef = useRef(null);
+
+  const animateImageIn = (el) => {
+    anime({
+      targets: el,
+      opacity: 0,
+      duration: 300,
+      delay: 0,
+      easing: 'easeOutCirc',
+    });
+  }
+
+  const animateImageOut = (el) => {
+    anime({
+      targets: el,
+      opacity: 1,
+      duration: 300,
+      delay: 0,
+      easing: 'easeOutCirc',
+    })
+  }
 
   const animateTextIn = (el) => {
     anime({
@@ -45,7 +67,7 @@ const Thumbnail = (props) => {
       scale: 1.01,
       translateY: -10,
       boxShadow: [`0px 0px 0px 0px ${boxShadowColor}`, `0px 10px 20px 0px ${boxShadowColor}`],
-      duration: 300,
+      duration: 500,
       delay: 0,
       easing: 'easeOutQuint',
     });
@@ -57,23 +79,28 @@ const Thumbnail = (props) => {
       scale: 1,
       translateY: 0,
       boxShadow: [`0px 10px 20px 0px ${boxShadowColor}`, `0px 0px 0px 0px ${boxShadowColor}`],
-      duration: 300,
+      duration: 500,
       delay: 0,
       easing: 'easeOutQuint',
     });
   };
 
   const Container = styled.div`
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: ${backgroundColor};
+    /* background-color: ${backgroundColor}; */
+    background: linear-gradient(45deg, #3F96FF, #8739E5);
     color: ${color};
     flex-direction: column;
     border-radius: 10px;
+    user-select: none;
     /* box-shadow: 0px 0px 0px 0px ${boxShadowColor}; */
     width: 100%;
     height: 275px;
+    overflow: hidden;
+    object-fit: cover;
     /* transition-property: box-shadow, transform;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out; */
@@ -95,9 +122,20 @@ const Thumbnail = (props) => {
 
   const Desc = styled.div`
     font-size: x-large;
-    font-weight: 100;
+    font-weight: 200;
     opacity: 0;
     transform: translateY(30px);
+    white-space: pre-line;
+    text-align: center;
+  `;
+
+  const Image = styled.img`
+    position: absolute;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   `;
 
   return (
@@ -106,14 +144,17 @@ const Thumbnail = (props) => {
       className="thumbnail-container"
       {...flippedProps}
       onMouseEnter={() => {
+        animateImageIn(imgRef.current);
         animateTextIn([titleRef.current, descRef.current]);
         animateZoom(containerRef.current);
       }}
       onMouseLeave={() => {
+        animateImageOut(imgRef.current);
         animateTextOut([titleRef.current, descRef.current]);
         animateDezoom(containerRef.current);
       }}
     >
+      <Image ref={imgRef} src={img} alt="thumbnail" className="image" />
       <Title ref={titleRef} className="title">{title}</Title>
       <Desc ref={descRef} className="desc">{desc}</Desc>
     </Container>

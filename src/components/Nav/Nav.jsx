@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import uniqueId from 'lodash/uniqueId';
-import LogoImg from '../../codinov_logo1txt-white.svg';
+import LogoImg from '../../img/codinov_logo1txt-white.svg';
 
 const navButtons = [
   'Projects',

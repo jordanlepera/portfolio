@@ -6,35 +6,44 @@ import anime from 'animejs';
 import uniqueId from 'lodash/uniqueId';
 import Layout from '../Layout/Layout';
 import Thumbnail from '../Thumbnail/Thumbnail';
+import InventoryImg from '../../img/inventory-mockup.jpg';
+import OpenAuthImg from '../../img/open-auth-mockup.jpg';
+import MammaGioImg from '../../img/sallev4.jpg';
+import BriscolaImg from '../../img/briscola.jpg';
+import FollowerImg from '../../img/follower-analyzer-cover.jpg';
 
 const projectsList = [
   {
     title: 'Open\nAuthenticator',
     desc: 'electron.js TOTP provider',
+    img: OpenAuthImg,
     backgroundColor: '#0373fc',
     color: 'white',
     gridSize: 4,
-    boxShadowColor: 'rgba(3, 115, 252, 0.5)',
+    boxShadowColor: 'rgba(94, 94, 171, 0.5)',
   },
   {
     title: 'Inventory',
-    desc: 'a  app for little business',
+    desc: 'a mobile app\nfor little businesses',
+    img: InventoryImg,
     backgroundColor: '#fcba03',
-    color: '#3D3D3D',
+    color: 'white',
     gridSize: 4,
-    boxShadowColor: 'rgba(252, 186, 3, 0.5)',
+    boxShadowColor: 'rgba(94, 94, 171, 0.5)',
   },
   {
     title: 'Mamma Giovanna',
     desc: 'restaurant website',
+    img: MammaGioImg,
     backgroundColor: '#635959',
     color: 'white',
     gridSize: 4,
-    boxShadowColor: 'rgba(99, 89, 89, 0.5)',
+    boxShadowColor: 'rgba(94, 94, 171, 0.5)',
   },
   {
     title: 'Briscola',
     desc: 'italian card game',
+    img: BriscolaImg,
     backgroundColor: '#5e5eab',
     color: 'white',
     gridSize: 8,
@@ -43,10 +52,11 @@ const projectsList = [
   {
     title: 'follower-analyzer',
     desc: 'python script for instagram',
+    img: FollowerImg,
     backgroundColor: '#03fcdb',
     color: 'white',
     gridSize: 4,
-    boxShadowColor: 'rgba(3, 252, 219, 0.5)',
+    boxShadowColor: 'rgba(94, 94, 171, 0.5)',
   },
 ];
 
@@ -92,7 +102,7 @@ const App = () => {
         flipId={createCardFlipId(index)}
         onAppear={animateElementIn}
       >
-        {(flippedProps) => <Thumbnail title={elem.title} desc={elem.desc} backgroundColor={elem.backgroundColor} color={elem.color} boxShadowColor={elem.boxShadowColor} className="thumbnail" flippedProps={flippedProps} />}
+        {(flippedProps) => <Thumbnail title={elem.title} desc={elem.desc} img={elem.img} backgroundColor={elem.backgroundColor} color={elem.color} boxShadowColor={elem.boxShadowColor} className="thumbnail" flippedProps={flippedProps} />}
       </Flipped>
     </Grid>
   )));
