@@ -1,4 +1,5 @@
 import React from 'react';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Nav from '../Nav/Nav';
@@ -6,11 +7,12 @@ import Footer from '../Footer/Footer';
 
 const Layout = (props) => {
   const { children } = props;
+  const matches = useMediaQuery('(max-width:600px)');
 
   return (
     <LayoutContainer>
       <Nav />
-      <LayoutContent>
+      <LayoutContent matches={matches}>
         {children}
       </LayoutContent>
       <Footer />
@@ -29,7 +31,7 @@ const LayoutContainer = styled.div`
 const LayoutContent = styled.section`
   margin-top: 30px;
   width: 100%;
-  max-width: 1000px;
+  max-width: ${props => props.matches ? '90%' : '1000px'};
   display: flex;
   align-items: center;
   justify-content: space-around;

@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 import { Flipper, Flipped } from 'react-flip-toolkit';
 import anime from 'animejs';
@@ -11,49 +16,50 @@ import OpenAuthImg from '../../img/open-auth-mockup.jpg';
 import MammaGioImg from '../../img/sallev4.jpg';
 import BriscolaImg from '../../img/briscola.jpg';
 import FollowerImg from '../../img/follower-analyzer-cover.jpg';
+import Project from '../Project/Project';
 
 const projectsList = [
   {
+    url: 'open-authenticator',
     title: 'Open\nAuthenticator',
     desc: 'electron.js TOTP provider',
     img: OpenAuthImg,
-    backgroundColor: '#0373fc',
     color: 'white',
     gridSize: 4,
     boxShadowColor: 'rgba(94, 94, 171, 0.5)',
   },
   {
+    url: 'inventory',
     title: 'Inventory',
     desc: 'a mobile app\nfor little businesses',
     img: InventoryImg,
-    backgroundColor: '#fcba03',
     color: 'white',
     gridSize: 4,
     boxShadowColor: 'rgba(94, 94, 171, 0.5)',
   },
   {
+    url: 'mamma-giovanna',
     title: 'Mamma Giovanna',
     desc: 'restaurant website',
     img: MammaGioImg,
-    backgroundColor: '#635959',
     color: 'white',
     gridSize: 4,
     boxShadowColor: 'rgba(94, 94, 171, 0.5)',
   },
   {
+    url: 'briscola',
     title: 'Briscola',
     desc: 'italian card game',
     img: BriscolaImg,
-    backgroundColor: '#5e5eab',
     color: 'white',
     gridSize: 8,
     boxShadowColor: 'rgba(94, 94, 171, 0.5)',
   },
   {
+    url: 'follower-analyzer',
     title: 'follower-analyzer',
     desc: 'python script for instagram',
     img: FollowerImg,
-    backgroundColor: '#03fcdb',
     color: 'white',
     gridSize: 4,
     boxShadowColor: 'rgba(94, 94, 171, 0.5)',
@@ -97,37 +103,47 @@ const App = () => {
   };
 
   const displayProjectsThumbnails = projects.map(((elem, index) => (
-    <Grid item xs={elem.gridSize} key={uniqueId('thumbnail-')}>
+    <Grid item xs={12} md={elem.gridSize} key={uniqueId('thumbnail-')}>
       <Flipped
         flipId={createCardFlipId(index)}
         onAppear={animateElementIn}
       >
-        {(flippedProps) => <Thumbnail title={elem.title} desc={elem.desc} img={elem.img} backgroundColor={elem.backgroundColor} color={elem.color} boxShadowColor={elem.boxShadowColor} className="thumbnail" flippedProps={flippedProps} />}
+        {(flippedProps) => <Thumbnail url={elem.url} title={elem.title} desc={elem.desc} img={elem.img} color={elem.color} boxShadowColor={elem.boxShadowColor} className="thumbnail" flippedProps={flippedProps} />}
       </Flipped>
     </Grid>
   )));
 
   return (
-    <Layout>
-      <ContentContainer
-        handleEnterUpdateDelete={exitThenFlipThenEnter}
-        flipKey={projects}
-        spring="gentle"
-        decisionData={projects}
-      >
-        <Grid container alignItems="center" justify="space-evenly" spacing={3}>
-          {displayProjectsThumbnails}
-        </Grid>
-      </ContentContainer>
-    </Layout>
+    <Router>
+      <Layout>
+        <Switch>
+          <Route path="/">
+            <ContentContainer
+              handleEnterUpdateDelete={exitThenFlipThenEnter}
+              flipKey={projects}
+              spring="gentle"
+              decisionData={projects}
+            >
+              <Grid container alignItems="center" justify="space-evenly" spacing={3}>
+                {displayProjectsThumbnails}
+              </Grid>
+            </ContentContainer>
+          </Route>
+          <Route path={`/projects/:projectId`}>
+            <Project test="Hello world" />
+          </Route>
+        </Switch>
+      </Layout>
+    </Router>
   );
 };
 
 const ContentContainer = styled(Flipper)`
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: space-around;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 20px;
 `;
 
 export default App;

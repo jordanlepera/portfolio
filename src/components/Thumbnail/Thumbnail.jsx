@@ -1,15 +1,16 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef } from 'react';
 import styled from 'styled-components';
+import { NavLink } from "react-router-dom";
 import PropTypes from 'prop-types';
 import anime from 'animejs';
 
 const Thumbnail = (props) => {
   const {
+    url,
     title,
     desc,
     img,
-    backgroundColor,
     color,
     boxShadowColor,
     flippedProps,
@@ -90,25 +91,22 @@ const Thumbnail = (props) => {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: ${backgroundColor}; */
     background: linear-gradient(45deg, #3F96FF, #8739E5);
     color: ${color};
     flex-direction: column;
     border-radius: 10px;
     user-select: none;
-    /* box-shadow: 0px 0px 0px 0px ${boxShadowColor}; */
     width: 100%;
     height: 275px;
     overflow: hidden;
     object-fit: cover;
-    /* transition-property: box-shadow, transform;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in-out; */
     &:hover {
-      /* box-shadow: 0px 10px 20px 0px ${boxShadowColor};
-      transform: scale(1.01) translateY(-10px); */
       cursor: pointer;
     }
+  `;
+
+  const ThumbLink = styled(NavLink)`
+    text-decoration: none;
   `;
 
   const Title = styled.div`
@@ -139,29 +137,32 @@ const Thumbnail = (props) => {
   `;
 
   return (
-    <Container
-      ref={containerRef}
-      className="thumbnail-container"
-      {...flippedProps}
-      onMouseEnter={() => {
-        animateImageIn(imgRef.current);
-        animateTextIn([titleRef.current, descRef.current]);
-        animateZoom(containerRef.current);
-      }}
-      onMouseLeave={() => {
-        animateImageOut(imgRef.current);
-        animateTextOut([titleRef.current, descRef.current]);
-        animateDezoom(containerRef.current);
-      }}
-    >
-      <Image ref={imgRef} src={img} alt="thumbnail" className="image" />
-      <Title ref={titleRef} className="title">{title}</Title>
-      <Desc ref={descRef} className="desc">{desc}</Desc>
-    </Container>
+    <ThumbLink to={`/projects/${url}`}>
+      <Container
+        ref={containerRef}
+        className="thumbnail-container"
+        {...flippedProps}
+        onMouseEnter={() => {
+          animateImageIn(imgRef.current);
+          animateTextIn([titleRef.current, descRef.current]);
+          animateZoom(containerRef.current);
+        }}
+        onMouseLeave={() => {
+          animateImageOut(imgRef.current);
+          animateTextOut([titleRef.current, descRef.current]);
+          animateDezoom(containerRef.current);
+        }}
+      >
+        <Image ref={imgRef} src={img} alt="thumbnail" className="image" />
+        <Title ref={titleRef} className="title">{title}</Title>
+        <Desc ref={descRef} className="desc">{desc}</Desc>
+      </Container>
+    </ThumbLink>
   );
 };
 
 Thumbnail.defaultProps = {
+  url: '/',
   title: '',
   desc: '',
   backgroundColor: '#3D3D3D',
@@ -171,6 +172,7 @@ Thumbnail.defaultProps = {
 };
 
 Thumbnail.propTypes = {
+  url: PropTypes.string,
   title: PropTypes.string,
   desc: PropTypes.string,
   backgroundColor: PropTypes.string,
