@@ -20,48 +20,6 @@ const Thumbnail = (props) => {
   const descRef = useRef(null);
   const imgRef = useRef(null);
 
-  const animateImageIn = (el) => {
-    anime({
-      targets: el,
-      opacity: 0,
-      duration: 300,
-      delay: 0,
-      easing: 'easeOutCirc',
-    });
-  }
-
-  const animateImageOut = (el) => {
-    anime({
-      targets: el,
-      opacity: 1,
-      duration: 300,
-      delay: 0,
-      easing: 'easeOutCirc',
-    })
-  }
-
-  const animateTextIn = (el) => {
-    anime({
-      targets: el,
-      opacity: 1,
-      translateY: [30, 0],
-      duration: 300,
-      delay: 0,
-      easing: 'easeOutCirc',
-    });
-  };
-
-  const animateTextOut = (el) => {
-    anime({
-      targets: el,
-      opacity: 0,
-      translateY: 30,
-      duration: 300,
-      delay: 0,
-      easing: 'easeOutCirc',
-    });
-  };
-
   const animateZoom = (el) => {
     anime({
       targets: el,
@@ -86,25 +44,6 @@ const Thumbnail = (props) => {
     });
   };
 
-  const Container = styled.div`
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(45deg, #3F96FF, #8739E5);
-    color: ${color};
-    flex-direction: column;
-    border-radius: 10px;
-    user-select: none;
-    width: 100%;
-    height: 275px;
-    overflow: hidden;
-    object-fit: cover;
-    &:hover {
-      cursor: pointer;
-    }
-  `;
-
   const ThumbLink = styled(NavLink)`
     text-decoration: none;
   `;
@@ -116,6 +55,7 @@ const Thumbnail = (props) => {
     transform: translateY(30px);
     white-space: pre-line;
     text-align: center;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out;
   `;
 
   const Desc = styled.div`
@@ -125,6 +65,7 @@ const Thumbnail = (props) => {
     transform: translateY(30px);
     white-space: pre-line;
     text-align: center;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out;
   `;
 
   const Image = styled.img`
@@ -134,6 +75,39 @@ const Thumbnail = (props) => {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  `;
+
+  const Container = styled.div`
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #3F96FF, #8739E5);
+    transform: translateY(0);
+    box-shadow: 0px 0px 0px 0px ${boxShadowColor};
+    color: ${color};
+    flex-direction: column;
+    border-radius: 10px;
+    user-select: none;
+    width: 100%;
+    height: 275px;
+    overflow: hidden;
+    object-fit: cover;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover ${Image} {
+      opacity: 0;
+    }
+    &:hover ${Title} {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+    &:hover ${Desc} {
+      transform: translateY(0px);
+      opacity: 1;
+    }
   `;
 
   return (
@@ -143,13 +117,9 @@ const Thumbnail = (props) => {
         className="thumbnail-container"
         {...flippedProps}
         onMouseEnter={() => {
-          animateImageIn(imgRef.current);
-          animateTextIn([titleRef.current, descRef.current]);
           animateZoom(containerRef.current);
         }}
         onMouseLeave={() => {
-          animateImageOut(imgRef.current);
-          animateTextOut([titleRef.current, descRef.current]);
           animateDezoom(containerRef.current);
         }}
       >

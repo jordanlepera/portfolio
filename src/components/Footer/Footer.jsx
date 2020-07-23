@@ -59,7 +59,7 @@ const Footer = () => {
               &nbsp;@jordanlepera
             </SocialLink>
           </Grid>
-          <Grid itemType>
+          <Grid item>
             <SocialLink href="https://github.com/jordanlepera" target="blank">
               <FaGithub />
             &nbsp;jordanlepera
