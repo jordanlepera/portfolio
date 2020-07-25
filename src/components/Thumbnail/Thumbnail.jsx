@@ -1,16 +1,27 @@
+// @flow
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useRef } from "react"
+import * as React from "react"
 import styled from "styled-components"
 import { NavLink } from "react-router-dom"
 import PropTypes from "prop-types"
 import anime from "animejs"
 
-const Thumbnail = (props) => {
+type Props = {
+  url: string,
+  title: string,
+  desc: string,
+  img: string,
+  color: string,
+  boxShadowColor: string,
+  flippedProps: any,
+}
+
+const Thumbnail = (props: Props) => {
   const { url, title, desc, img, color, boxShadowColor, flippedProps } = props
-  const containerRef = useRef(null)
-  const titleRef = useRef(null)
-  const descRef = useRef(null)
-  const imgRef = useRef(null)
+  const containerRef = React.useRef(null)
+  const titleRef = React.useRef(null)
+  const descRef = React.useRef(null)
+  const imgRef = React.useRef(null)
 
   const animateZoom = (el) => {
     anime({
@@ -43,29 +54,31 @@ const Thumbnail = (props) => {
   }
 
   return (
-    <ThumbLink to={`/projects/${url}`}>
-      <Container
-        ref={containerRef}
-        className="thumbnail-container"
-        {...flippedProps}
-        onMouseEnter={() => {
-          animateZoom(containerRef.current)
-        }}
-        onMouseLeave={() => {
-          animateDezoom(containerRef.current)
-        }}
-        textColor={color}
-        boxShadowColor={boxShadowColor}
-      >
-        <Image ref={imgRef} src={img} alt="thumbnail" className="image" />
-        <Title ref={titleRef} className="title">
-          {title}
-        </Title>
-        <Desc ref={descRef} className="desc">
-          {desc}
-        </Desc>
-      </Container>
-    </ThumbLink>
+    <>
+      <ThumbLink to={`/projects/${url}`}>
+        <Container
+          ref={containerRef}
+          className="thumbnail-container"
+          {...flippedProps}
+          onMouseEnter={() => {
+            animateZoom(containerRef.current)
+          }}
+          onMouseLeave={() => {
+            animateDezoom(containerRef.current)
+          }}
+          textColor={color}
+          boxShadowColor={boxShadowColor}
+        >
+          <Image ref={imgRef} src={img} alt="thumbnail" className="image" />
+          <Title ref={titleRef} className="title">
+            {title}
+          </Title>
+          <Desc ref={descRef} className="desc">
+            {desc}
+          </Desc>
+        </Container>
+      </ThumbLink>
+    </>
   )
 }
 

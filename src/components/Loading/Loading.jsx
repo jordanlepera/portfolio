@@ -1,12 +1,15 @@
+// @flow
 import React from "react"
 import styled, { keyframes } from "styled-components"
 
 const Loading = () => {
   return (
-    <LoadingContainer>
-      <Spinner />
-      <LoadingText>LOADING</LoadingText>
-    </LoadingContainer>
+    <>
+      <LoadingContainer>
+        <Spinner />
+        <LoadingText>LOADING</LoadingText>
+      </LoadingContainer>
+    </>
   )
 }
 

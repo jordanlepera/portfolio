@@ -1,3 +1,4 @@
+// @flow
 import React from "react"
 import styled from "styled-components"
 import { useTranslation } from "react-i18next"
@@ -9,10 +10,12 @@ const WorkInProgress = () => {
   const matches = useMediaQuery("(max-width:959px)")
 
   return (
-    <Container>
-      <Image src={construction} alt="under construction" matches={matches} />
-      <TextContainer>{t("work-in-progress")}</TextContainer>
-    </Container>
+    <>
+      <Container>
+        <Image src={construction} alt="under construction" matches={matches} />
+        <TextContainer>{t("work-in-progress")}</TextContainer>
+      </Container>
+    </>
   )
 }
 
@@ -22,7 +25,6 @@ const Image = styled.img`
 `
 
 const Container = styled.div`
-  width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;

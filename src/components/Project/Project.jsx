@@ -1,8 +1,13 @@
-import React from "react"
+// @flow
+import * as React from "react"
 import PropTypes from "prop-types"
 import { useTranslation } from "react-i18next"
 
-const Project = (props) => {
+type Props = {
+  test?: string,
+}
+
+const Project = (props: Props) => {
   const { test } = props
   const { t } = useTranslation()
 
