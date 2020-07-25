@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +8,21 @@ import { NavLink } from 'react-router-dom';
 import uniqueId from 'lodash/uniqueId';
 import MenuButton from '../MenuButton/MenuButton';
 import LogoImg from '../../img/codinov_logo1txt-white.svg';
+
+const languages = [
+  {
+    value: 'fr',
+    ariaLabel: 'french flag',
+    emoji: '🇫🇷',
+    text: 'Français'
+  },
+  {
+    value: 'en',
+    ariaLabel: 'english flag',
+    emoji: '🇬🇧',
+    text: 'English'
+  }
+];
 
 const Nav = () => {
   const matches = useMediaQuery('(max-width:959px)');
@@ -28,6 +43,14 @@ const Nav = () => {
     }
   ];
 
+  const languageMenuItemsList = languages.map((elem) => (
+    <MenuItem value={elem.value} key={uniqueId('languageMenuItem-')}>
+      <span role="img" aria-label={elem.ariaLabel}>
+        {elem.emoji}
+      </span> {elem.text}
+    </MenuItem>
+  ));
+
   const navButtonsList = navButtons.map((elem) => (
     <NavLink to={elem.url} key={uniqueId('navbuttons-')}>
       <NavButton type="button">{elem.text}</NavButton>
@@ -46,14 +69,13 @@ const Nav = () => {
       <Space />
       {matches ? <MenuButton /> : navButtonsList}
       <Select
-        labelId="demo-customized-select-label"
-        id="demo-customized-select"
-        value={i18n.language}
+        autoWidth
+        value={i18n.language.substring(0, 2)}
+        defaultValue={i18n.language.substring(0, 2)}
         variant="outlined"
         onChange={handleChange}
       >
-        <MenuItem value={'fr'}><span role="img" aria-label="french flag">🇫🇷</span> Français</MenuItem>
-        <MenuItem value={'en'}><span role="img" aria-label="english flag">🇬🇧</span> English</MenuItem>
+        {languageMenuItemsList}
       </Select>
     </NavBar>
   );
