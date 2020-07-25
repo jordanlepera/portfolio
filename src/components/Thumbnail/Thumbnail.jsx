@@ -44,72 +44,6 @@ const Thumbnail = (props) => {
     });
   };
 
-  const ThumbLink = styled(NavLink)`
-    text-decoration: none;
-  `;
-
-  const Title = styled.div`
-    font-size: xx-large;
-    font-weight: 600;
-    opacity: 0;
-    transform: translateY(30px);
-    white-space: pre-line;
-    text-align: center;
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out;
-  `;
-
-  const Desc = styled.div`
-    font-size: x-large;
-    font-weight: 200;
-    opacity: 0;
-    transform: translateY(30px);
-    white-space: pre-line;
-    text-align: center;
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out;
-  `;
-
-  const Image = styled.img`
-    position: absolute;
-    opacity: 1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-  `;
-
-  const Container = styled.div`
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(45deg, #3F96FF, #8739E5);
-    transform: translateY(0);
-    box-shadow: 0px 0px 0px 0px ${boxShadowColor};
-    color: ${color};
-    flex-direction: column;
-    border-radius: 10px;
-    user-select: none;
-    width: 100%;
-    height: 275px;
-    overflow: hidden;
-    object-fit: cover;
-    &:hover {
-      cursor: pointer;
-    }
-    &:hover ${Image} {
-      opacity: 0;
-    }
-    &:hover ${Title} {
-      transform: translateY(0px);
-      opacity: 1;
-    }
-    &:hover ${Desc} {
-      transform: translateY(0px);
-      opacity: 1;
-    }
-  `;
-
   return (
     <ThumbLink to={`/projects/${url}`}>
       <Container
@@ -122,6 +56,8 @@ const Thumbnail = (props) => {
         onMouseLeave={() => {
           animateDezoom(containerRef.current);
         }}
+        textColor={color}
+        boxShadowColor={boxShadowColor}
       >
         <Image ref={imgRef} src={img} alt="thumbnail" className="image" />
         <Title ref={titleRef} className="title">{title}</Title>
@@ -130,6 +66,72 @@ const Thumbnail = (props) => {
     </ThumbLink>
   );
 };
+
+const ThumbLink = styled(NavLink)`
+  text-decoration: none;
+`;
+
+const Title = styled.div`
+  font-size: xx-large;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(30px);
+  white-space: pre-line;
+  text-align: center;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out;
+`;
+
+const Desc = styled.div`
+  font-size: x-large;
+  font-weight: 200;
+  opacity: 0;
+  transform: translateY(30px);
+  white-space: pre-line;
+  text-align: center;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out;
+`;
+
+const Image = styled.img`
+  position: absolute;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+`;
+
+const Container = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #3F96FF, #8739E5);
+  transform: translateY(0);
+  box-shadow: 0px 0px 0px 0px ${props => props.boxShadowColor};
+  color: ${props => props.textColor};
+  flex-direction: column;
+  border-radius: 10px;
+  user-select: none;
+  width: 100%;
+  height: 275px;
+  overflow: hidden;
+  object-fit: cover;
+  &:hover {
+    cursor: pointer;
+  }
+  &:hover ${Image} {
+    opacity: 0;
+  }
+  &:hover ${Title} {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  &:hover ${Desc} {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+`;
 
 Thumbnail.defaultProps = {
   url: '/',
