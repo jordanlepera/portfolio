@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
 // import { useTranslation } from 'react-i18next';
-import WorkInProgress from '../../components/WorkInProgress/WorkInProgress';
+import WorkInProgress from "../../components/WorkInProgress/WorkInProgress"
 
 const Projects = () => {
   // const { t } = useTranslation();
@@ -10,11 +10,11 @@ const Projects = () => {
     <Container>
       <WorkInProgress />
     </Container>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   width: 90%;
-`;
+`
 
-export default Projects;
+export default Projects

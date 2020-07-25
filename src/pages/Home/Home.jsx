@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { useTranslation } from 'react-i18next';
-import Grid from '@material-ui/core/Grid';
-import { Flipper, Flipped } from 'react-flip-toolkit';
-import anime from 'animejs';
-import uniqueId from 'lodash/uniqueId';
-import Thumbnail from '../../components/Thumbnail/Thumbnail';
-import InventoryImg from '../../img/inventory-mockup.jpg';
-import OpenAuthImg from '../../img/open-auth-mockup.jpg';
-import MammaGioImg from '../../img/sallev4.jpg';
-import BriscolaImg from '../../img/briscola.jpg';
-import FollowerImg from '../../img/follower-analyzer-cover.jpg';
+// @flow
+import React, { useState, useEffect } from "react"
+import styled from "styled-components"
+import { useTranslation } from "react-i18next"
+import Grid from "@material-ui/core/Grid"
+import { Flipper, Flipped } from "react-flip-toolkit"
+import anime from "animejs"
+import uniqueId from "lodash/uniqueId"
+import Thumbnail from "../../components/Thumbnail/Thumbnail"
+import InventoryImg from "../../img/inventory-mockup.jpg"
+import OpenAuthImg from "../../img/open-auth-mockup.jpg"
+import MammaGioImg from "../../img/sallev4.jpg"
+import BriscolaImg from "../../img/briscola.jpg"
+import FollowerImg from "../../img/follower-analyzer-cover.jpg"
 
-const createCardFlipId = (index) => `listItem-${index}`;
+const createCardFlipId = (index) => `listItem-${index}`
 
 // wait for exiting elements to be removed
 // next, animate updating elements
@@ -24,62 +25,70 @@ const exitThenFlipThenEnter = ({
   animateExitingElements,
   animateFlippedElements,
 }) => {
-  hideEnteringElements();
+  hideEnteringElements()
   animateExitingElements()
     .then(animateFlippedElements)
-    .then(animateEnteringElements);
-};
+    .then(animateEnteringElements)
+}
 
 const projectsList = [
   {
-    url: 'open-authenticator',
-    title: 'Open\nAuthenticator',
+    url: "open-authenticator",
+    title: "Open\nAuthenticator",
     img: OpenAuthImg,
-    color: 'white',
+    color: "white",
     gridSize: 4,
-    boxShadowColor: 'rgba(94, 94, 171, 0.5)',
+    boxShadowColor: "rgba(94, 94, 171, 0.5)",
   },
   {
-    url: 'inventory',
-    title: 'Inventory',
+    url: "inventory",
+    title: "Inventory",
     img: InventoryImg,
-    color: 'white',
+    color: "white",
     gridSize: 4,
-    boxShadowColor: 'rgba(94, 94, 171, 0.5)',
+    boxShadowColor: "rgba(94, 94, 171, 0.5)",
   },
   {
-    url: 'mamma-giovanna',
-    title: 'Mamma Giovanna',
+    url: "mamma-giovanna",
+    title: "Mamma Giovanna",
     img: MammaGioImg,
-    color: 'white',
+    color: "white",
     gridSize: 4,
-    boxShadowColor: 'rgba(94, 94, 171, 0.5)',
+    boxShadowColor: "rgba(94, 94, 171, 0.5)",
   },
   {
-    url: 'briscola',
-    title: 'Briscola',
+    url: "briscola",
+    title: "Briscola",
     img: BriscolaImg,
-    color: 'white',
+    color: "white",
     gridSize: 8,
-    boxShadowColor: 'rgba(94, 94, 171, 0.5)',
+    boxShadowColor: "rgba(94, 94, 171, 0.5)",
   },
   {
-    url: 'follower-analyzer',
-    title: 'follower-analyzer',
+    url: "follower-analyzer",
+    title: "follower-analyzer",
     img: FollowerImg,
-    color: 'white',
+    color: "white",
     gridSize: 4,
-    boxShadowColor: 'rgba(94, 94, 171, 0.5)',
+    boxShadowColor: "rgba(94, 94, 171, 0.5)",
   },
-];
+]
+
+const ContentContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 20px;
+`
 
 const Home = () => {
-  const [projects, setProjects] = useState([]);
-  const { t } = useTranslation();
+  const [projects, setProjects] = useState([])
+  const { t } = useTranslation()
 
   useEffect(() => {
-    setProjects([...projectsList]);
-  }, []);
+    setProjects([...projectsList])
+  }, [])
 
   const animateElementIn = (el, i) => {
     anime({
@@ -88,41 +97,42 @@ const Home = () => {
       translateY: [40, 0],
       duration: 1000,
       delay: i * 100,
-      easing: 'cubicBezier(0.165, 0.84, 0.44, 1)',
-    });
-  };
+      easing: "cubicBezier(0.165, 0.84, 0.44, 1)",
+    })
+  }
 
-  const displayProjectsThumbnails = projects.map(((elem, index) => (
-    <Grid item xs={12} md={elem.gridSize} key={uniqueId('thumbnail-')}>
-      <Flipped
-        flipId={createCardFlipId(index)}
-        onAppear={animateElementIn}
-      >
-        {(flippedProps) => <Thumbnail url={elem.url} title={elem.title} desc={t(`${elem.url}-desc`)} img={elem.img} color={elem.color} boxShadowColor={elem.boxShadowColor} className="thumbnail" flippedProps={flippedProps} />}
+  const displayProjectsThumbnails = projects.map((elem, index) => (
+    <Grid item xs={12} md={elem.gridSize} key={uniqueId("thumbnail-")}>
+      <Flipped flipId={createCardFlipId(index)} onAppear={animateElementIn}>
+        {(flippedProps) => (
+          <Thumbnail
+            url={elem.url}
+            title={elem.title}
+            desc={t(`${elem.url}-desc`)}
+            img={elem.img}
+            color={elem.color}
+            boxShadowColor={elem.boxShadowColor}
+            className="thumbnail"
+            flippedProps={flippedProps}
+          />
+        )}
       </Flipped>
     </Grid>
-  )));
+  ))
 
   return (
-    <ContentContainer
+    <Flipper
       handleEnterUpdateDelete={exitThenFlipThenEnter}
       flipKey={projects}
       spring="gentle"
       decisionData={projects}
+      element={ContentContainer}
     >
       <Grid container alignItems="center" justify="space-evenly" spacing={3}>
         {displayProjectsThumbnails}
       </Grid>
-    </ContentContainer>
-  );
-};
+    </Flipper>
+  )
+}
 
-const ContentContainer = styled(Flipper)`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 0 20px;
-`;
-
-export default Home;
+export default Home

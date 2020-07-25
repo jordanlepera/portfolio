@@ -1,9 +1,10 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from "react"
+import { mount } from "enzyme"
+// import { render } from '@testing-library/react';
+import App from "./App"
 
-test('renders nav link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/Projec?ts/gi);
-  expect(linkElement).toBeInTheDocument();
-});
+test("renders App component", () => {
+  const mounted = mount(<App />)
+  // const linkElement = getByText(/Projec?ts/gi);
+  expect(mounted.contains(/Projec?ts/gi)).toBe(true)
+})

@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react"
 
-const MobileMenu = () => {
+const MobileMenu = () => <div>Test</div>
 
-}
-
-export default MobileMenu;
+export default MobileMenu
