@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Suspense } from 'react';
 import styled from 'styled-components';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTranslation } from 'react-i18next';
@@ -7,6 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { NavLink } from 'react-router-dom';
 import uniqueId from 'lodash/uniqueId';
 import MenuButton from '../MenuButton/MenuButton';
+import Loading from '../Loading/Loading';
 import LogoImg from '../../img/codinov_logo1txt-white.svg';
 
 const languages = [
@@ -62,22 +63,24 @@ const Nav = () => {
   };
 
   return (
-    <NavBar matches={matches}>
-      <NavLink to="/">
-        <Logo src={LogoImg} alt="Codinov's logo" />
-      </NavLink>
-      <Space />
-      {matches ? <MenuButton /> : navButtonsList}
-      <Select
-        autoWidth
-        value={i18n.language.substring(0, 2)}
-        defaultValue={i18n.language.substring(0, 2)}
-        variant="outlined"
-        onChange={handleChange}
-      >
-        {languageMenuItemsList}
-      </Select>
-    </NavBar>
+    <Suspense fallback={<Loading />}>
+      <NavBar matches={matches}>
+        <NavLink to="/">
+          <Logo src={LogoImg} alt="Codinov's logo" />
+        </NavLink>
+        <Space />
+        {matches ? <MenuButton /> : navButtonsList}
+        <Select
+          autoWidth
+          value={i18n.language.substring(0, 2)}
+          defaultValue={i18n.language.substring(0, 2)}
+          variant="outlined"
+          onChange={handleChange}
+        >
+          {languageMenuItemsList}
+        </Select>
+      </NavBar>
+    </Suspense>
   );
 };
 
