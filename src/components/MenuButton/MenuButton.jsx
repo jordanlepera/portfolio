@@ -18,7 +18,7 @@ const MenuButtontext = styled.div`
 
 const MenuButtonContainer = styled.button`
   border: solid 1px #eeeeee;
-  padding: 20px;
+  padding: 15px;
   margin: 20px;
   display: flex;
   align-self: center;

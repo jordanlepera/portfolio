@@ -31,6 +31,10 @@ const Nav = () => {
 
   const navButtons = [
     {
+      text: t("home"),
+      url: "/",
+    },
+    {
       text: t("projects"),
       url: "/projects",
     },
@@ -67,7 +71,7 @@ const Nav = () => {
     <Suspense fallback={<Loading />}>
       <NavBar matches={matches}>
         <NavLink to="/">
-          <Logo src={LogoImg} alt="Codinov's logo" />
+          <Logo src={LogoImg} alt="Codinov's logo" matches={matches} />
         </NavLink>
         <Space />
         {matches ? <MenuButton /> : navButtonsList}
@@ -95,11 +99,13 @@ const NavBar = styled.nav`
   width: 90%;
   border-bottom: 1px solid #dddddd;
   padding: 10px;
+  ${(props) => (props.matches ? "padding-bottom: 30px" : "")};
 `
 
 const Logo = styled.img`
-  width: 300px;
+  width: 200px;
   height: auto;
+  ${(props) => (props.matches ? "margin: 10px 0" : "")};
 `
 
 const Space = styled.span`
@@ -109,7 +115,6 @@ const Space = styled.span`
 const NavButton = styled.button`
   font-weight: bold;
   width: 100px;
-  height: 80px;
   border-radius: 10px;
   text-transform: capitalize;
   font-size: large;
