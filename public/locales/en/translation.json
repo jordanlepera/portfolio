@@ -5,5 +5,10 @@
   "about": "About",
   "loading": "Loading",
   "work-in-progress": "Work in progress",
-  "page-not-found": "Page not found"
+  "page-not-found": "Page not found",
+  "open-authenticator-desc": "electron.js TOTP provider",
+  "inventory-desc": "a mobile app\nfor little businesses",
+  "mamma-giovanna-desc": "restaurant website",
+  "briscola-desc": "italian card game",
+  "follower-analyzer-desc": "python script for instagram"
 }
