@@ -8,7 +8,7 @@ const Footer = () => {
   const matches = useMediaQuery("(max-width:959px)")
 
   return (
-    <footer>
+    <footer style={{ width: "90%", maxWidth: "1000px" }}>
       <FooterContainer matches={matches}>
         <CopyrightContainer matches={matches}>
           2020 © Jordan LE PERA - All rights reserved
@@ -44,7 +44,7 @@ const FooterContainer = styled.div`
   min-height: 80px;
   max-width: 1000px;
   margin-top: 30px;
-  width: 90%;
+  width: 100%;
 `
 
 const CopyrightContainer = styled.div`
