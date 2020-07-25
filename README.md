@@ -1,4 +1,19 @@
+# Portfolio
+
+[![Build Status](https://travis-ci.com/jordanlepera/portfolio.svg?branch=master)](https://travis-ci.com/jordanlepera/portfolio)
+
+My personal portfolio made with React. It is a showcase for the projects I develop and a blog
+about my experiences as a developer as well as some tutorials and interesting stuffs.
+
+[Visit portfolio](https://codinov.com)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# Features
+
+* i18n
+* Responsive
+* Material-UI
 
 ## Available Scripts
 
