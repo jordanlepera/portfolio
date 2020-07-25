@@ -13,7 +13,7 @@ type Props = {
 
 const Layout = (props: Props) => {
   const { children } = props
-  const matches = useMediaQuery("(max-width:600px)")
+  const matches = useMediaQuery("(max-width:959px)")
 
   return (
     <>
