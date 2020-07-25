@@ -1,40 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTranslation } from 'react-i18next';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 import { NavLink } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa';
 import uniqueId from 'lodash/uniqueId';
+import MenuButton from '../MenuButton/MenuButton';
 import LogoImg from '../../img/codinov_logo1txt-white.svg';
-
-const navButtons = [
-  {
-    text: 'Projects',
-    url: '/projects',
-  },
-  {
-    text: 'Articles',
-    url: 'articles',
-  },
-  {
-    text: 'About',
-    url: 'about',
-  }
-];
 
 const Nav = () => {
   const matches = useMediaQuery('(max-width:959px)');
+  const { t, i18n } = useTranslation();
 
-  const NavBar = styled.nav`
-  display: flex;
-  align-items: center;
-  flex-direction: ${props => props.matches ? 'column' : 'row'};
-  min-height: 80px;
-  max-width: 1000px;
-  margin-top: 30px;
-  width: 90%;
-  border-bottom: 1px solid #dddddd;
-  padding: 10px;
-`;
+  const navButtons = [
+    {
+      text: t('projects'),
+      url: '/projects',
+    },
+    {
+      text: t('articles'),
+      url: '/articles',
+    },
+    {
+      text: t('about'),
+      url: '/about',
+    }
+  ];
 
   const navButtonsList = navButtons.map((elem) => (
     <NavLink to={elem.url} key={uniqueId('navbuttons-')}>
@@ -42,13 +34,8 @@ const Nav = () => {
     </NavLink>
   ));
 
-  const MenuButton = () => {
-    return (
-      <MenuButtonContainer>
-        <FaBars color="#3D3D3D" size={20} />
-        <MenuButtontext>MENU</MenuButtontext>
-      </MenuButtonContainer>
-    );
+  const handleChange = (event) => {
+    i18n.changeLanguage(event.target.value);
   };
 
   return (
@@ -58,33 +45,30 @@ const Nav = () => {
       </NavLink>
       <Space />
       {matches ? <MenuButton /> : navButtonsList}
+      <Select
+        labelId="demo-customized-select-label"
+        id="demo-customized-select"
+        value={i18n.language}
+        variant="outlined"
+        onChange={handleChange}
+      >
+        <MenuItem value={'fr'}><span role="img" aria-label="french flag">🇫🇷</span> Français</MenuItem>
+        <MenuItem value={'en'}><span role="img" aria-label="english flag">🇬🇧</span> English</MenuItem>
+      </Select>
     </NavBar>
   );
 };
 
-const MenuButtontext = styled.div`
-  margin-left: 10px;
-  font-size: 20px;
-`;
-
-const MenuButtonContainer = styled.button`
-  border: solid 1px #EEEEEE;
-  padding: 20px;
-  margin: 20px;
+const NavBar = styled.nav`
   display: flex;
-  align-self: center;
-  justify-content: center;
-  flex-direction: row;
-  border-radius: 10px;
-  cursor: pointer;
-  outline: none;
-  background-color: transparent;
-  color: #3D3D3D;
-  user-select: none;
-  transition: color 0.3s, background 0.3s;
-  &:hover {
-    background-color: #EEEEEE;
-  }
+  align-items: center;
+  flex-direction: ${props => props.matches ? 'column' : 'row'};
+  min-height: 80px;
+  max-width: 1000px;
+  margin-top: 30px;
+  width: 90%;
+  border-bottom: 1px solid #dddddd;
+  padding: 10px;
 `;
 
 const Logo = styled.img`
