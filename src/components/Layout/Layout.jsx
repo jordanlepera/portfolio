@@ -1,22 +1,36 @@
-import React from "react"
+// @flow
+import * as React from "react"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import MobileNav from "../MobileNav/MobileNav"
 import Nav from "../Nav/Nav"
 import Footer from "../Footer/Footer"
 
-const Layout = (props) => {
+type Props = {
+  children?: React.Node,
+}
+
+const Layout = (props: Props) => {
   const { children } = props
   const matches = useMediaQuery("(max-width:600px)")
 
   return (
-    <LayoutContainer>
-      <Nav />
-      <LayoutContent matches={matches}>{children}</LayoutContent>
-      <Footer />
-    </LayoutContainer>
+    <>
+      <LayoutContainer>
+        {matches ? <MobileNav /> : <Nav />}
+        {matches ? <Space /> : ""}
+        <LayoutContent matches={matches}>{children}</LayoutContent>
+        <Footer />
+      </LayoutContainer>
+    </>
   )
 }
+
+const Space = styled.div`
+  height: 177px;
+  width: 100%;
+`
 
 const LayoutContainer = styled.div`
   width: 100%;

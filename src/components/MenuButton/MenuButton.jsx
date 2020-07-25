@@ -1,30 +1,26 @@
+// @flow
 import React from "react"
 import styled from "styled-components"
 import { FaBars } from "react-icons/fa"
 
 const MenuButton = () => {
   return (
-    <MenuButtonContainer>
-      <FaBars color="#3D3D3D" size={20} />
-      <MenuButtontext>MENU</MenuButtontext>
-    </MenuButtonContainer>
+    <>
+      <MenuButtonContainer>
+        <FaBars color="#3D3D3D" size={20} />
+      </MenuButtonContainer>
+    </>
   )
 }
 
-const MenuButtontext = styled.div`
-  margin-left: 10px;
-  font-size: 20px;
-`
-
 const MenuButtonContainer = styled.button`
-  border: solid 1px #eeeeee;
+  border: solid 1px #c4c4c4;
   padding: 15px;
-  margin: 20px;
   display: flex;
   align-self: center;
   justify-content: center;
   flex-direction: row;
-  border-radius: 10px;
+  border-radius: 4px;
   cursor: pointer;
   outline: none;
   background-color: transparent;

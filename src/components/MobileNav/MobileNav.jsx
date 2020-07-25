@@ -70,12 +70,14 @@ const Nav = () => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <NavBar matches={matches}>
-        <NavLink to="/">
-          <Logo src={LogoImg} alt="Codinov's logo" matches={matches} />
-        </NavLink>
-        <Space />
-        {matches ? <MenuButton /> : navButtonsList}
+      <MobileNavBarContainer>
+        <MobileNavBar matches={matches}>
+          <NavLink to="/">
+            <Logo src={LogoImg} alt="Codinov's logo" matches={matches} />
+          </NavLink>
+          <Space />
+          {matches ? <MenuButton /> : navButtonsList}
+        </MobileNavBar>
         <Select
           autoWidth
           value={i18n.language.substring(0, 2)}
@@ -85,28 +87,42 @@ const Nav = () => {
         >
           {languageMenuItemsList}
         </Select>
-      </NavBar>
+      </MobileNavBarContainer>
     </Suspense>
   )
 }
 
-const NavBar = styled.nav`
+const MobileNavBarContainer = styled.div`
   display: flex;
   align-items: center;
-  flex-direction: ${(props) => (props.matches ? "column" : "row")};
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 20px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+`
+
+const MobileNavBar = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: "row";
   min-height: 80px;
   max-width: 1000px;
-  margin-top: 30px;
   width: 90%;
-  border-bottom: 1px solid #dddddd;
-  padding: 10px;
-  ${(props) => (props.matches ? "padding-bottom: 30px" : "")};
 `
 
 const Logo = styled.img`
   width: 200px;
   height: auto;
   ${(props) => (props.matches ? "margin: 10px 0" : "")};
+  flex-grow: 1;
 `
 
 const Space = styled.span`
