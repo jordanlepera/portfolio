@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import styled from 'styled-components';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
+  Switch,
 } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 import { Flipper, Flipped } from 'react-flip-toolkit';
@@ -16,7 +16,12 @@ import OpenAuthImg from '../../img/open-auth-mockup.jpg';
 import MammaGioImg from '../../img/sallev4.jpg';
 import BriscolaImg from '../../img/briscola.jpg';
 import FollowerImg from '../../img/follower-analyzer-cover.jpg';
+import Projects from '../../pages/Projects/Projects';
+import Articles from '../../pages/Articles/Articles';
+import About from '../../pages/About/About';
 import Project from '../Project/Project';
+import Loading from '../Loading/Loading';
+import NotFound from '../NotFound/NotFound';
 
 const projectsList = [
   {
@@ -115,25 +120,40 @@ const App = () => {
 
   return (
     <Router>
-      <Layout>
-        <Switch>
-          <Route path="/">
-            <ContentContainer
-              handleEnterUpdateDelete={exitThenFlipThenEnter}
-              flipKey={projects}
-              spring="gentle"
-              decisionData={projects}
-            >
-              <Grid container alignItems="center" justify="space-evenly" spacing={3}>
-                {displayProjectsThumbnails}
-              </Grid>
-            </ContentContainer>
-          </Route>
-          <Route path={`/projects/:projectId`}>
-            <Project test="Hello world" />
-          </Route>
-        </Switch>
-      </Layout>
+      <Suspense fallback={<Loading />}>
+        <Layout>
+          <Switch>
+            <Route exact path="/">
+              <ContentContainer
+                handleEnterUpdateDelete={exitThenFlipThenEnter}
+                flipKey={projects}
+                spring="gentle"
+                decisionData={projects}
+              >
+                <Grid container alignItems="center" justify="space-evenly" spacing={3}>
+                  {displayProjectsThumbnails}
+                </Grid>
+              </ContentContainer>
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path='/projects'>
+              <Projects />
+            </Route>
+            <Route path='/projects/:projectId'>
+              <Project test="Hello world" />
+            </Route>
+            <Route path='/articles'>
+              <Articles />
+            </Route>
+            <Route path='/articles/:articleId'>
+              <Articles />
+            </Route>
+            <Route path="*" component={NotFound} />
+          </Switch>
+        </Layout>
+      </Suspense>
     </Router>
   );
 };
