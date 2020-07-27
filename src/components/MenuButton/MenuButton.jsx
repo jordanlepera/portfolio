@@ -4,18 +4,22 @@ import styled from "styled-components"
 import { FaBars } from "react-icons/fa"
 
 type Props = {
-  onClick: () => any,
+  onClick?: () => any,
 }
 
 const MenuButton = (props: Props) => {
   const { onClick } = props
   return (
     <>
-      <MenuButtonContainer onClick={() => onClick()}>
+      <MenuButtonContainer onClick={() => onClick && onClick()}>
         <FaBars color="#3D3D3D" size={25} />
       </MenuButtonContainer>
     </>
   )
+}
+
+MenuButton.defaultProps = {
+  onClick: undefined,
 }
 
 const MenuButtonContainer = styled.button`
