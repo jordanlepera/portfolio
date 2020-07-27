@@ -28,7 +28,7 @@ const Layout = (props: Props) => {
 }
 
 const Space = styled.div`
-  height: 177px;
+  height: 100px;
   width: 100%;
 `
 

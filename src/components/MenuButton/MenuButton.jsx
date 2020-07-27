@@ -1,23 +1,28 @@
 // @flow
-import React from "react"
+import * as React from "react"
 import styled from "styled-components"
 import { FaBars } from "react-icons/fa"
 
-const MenuButton = () => {
+type Props = {
+  onClick: () => any,
+}
+
+const MenuButton = (props: Props) => {
+  const { onClick } = props
   return (
     <>
-      <MenuButtonContainer>
-        <FaBars color="#3D3D3D" size={20} />
+      <MenuButtonContainer onClick={() => onClick()}>
+        <FaBars color="#3D3D3D" size={25} />
       </MenuButtonContainer>
     </>
   )
 }
 
 const MenuButtonContainer = styled.button`
-  border: solid 1px #c4c4c4;
-  padding: 15px;
+  border: solid 1px transparent;
   display: flex;
   align-self: center;
+  padding: 6px;
   justify-content: center;
   flex-direction: row;
   border-radius: 4px;
@@ -27,9 +32,6 @@ const MenuButtonContainer = styled.button`
   color: #3d3d3d;
   user-select: none;
   transition: color 0.3s, background 0.3s;
-  &:hover {
-    background-color: #eeeeee;
-  }
 `
 
 export default MenuButton
