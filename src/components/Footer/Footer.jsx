@@ -1,7 +1,7 @@
 // @flow
 import React from "react"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
-import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa"
+import { FaTwitter, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa"
 import styled from "styled-components"
 
 const Footer = () => {
@@ -28,6 +28,13 @@ const Footer = () => {
           >
             <FaInstagram />
             &nbsp;codinov.dev
+          </SocialLink>
+          <SocialLink
+            href="https://linkedin.com/in/jordanlepera"
+            target="blank"
+          >
+            <FaLinkedin />
+            &nbsp;Jordan Le Pera
           </SocialLink>
         </SocialContainer>
       </FooterContainer>
@@ -67,6 +74,8 @@ const SocialLink = styled.a`
   align-items: flex-end;
   flex-direction: row;
   text-decoration: none;
+  flex-wrap: nowrap;
+  white-space: nowrap;
   cursor: pointer;
   border: none;
   padding: 10px;
