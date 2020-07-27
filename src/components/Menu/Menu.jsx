@@ -221,7 +221,7 @@ const MobileMenuLink = (props: MenuLinkProps) => {
     // eslint-disable-next-line react/jsx-props-no-spreading
     <Container {...flippedProps}>
       <MenuLink to={url} exact={isExact} onClick={handleClose}>
-        <TextContainer>- {text} -</TextContainer>
+        <TextContainer>{text}</TextContainer>
       </MenuLink>
     </Container>
   )
