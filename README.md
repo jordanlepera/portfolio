@@ -7,6 +7,15 @@ about my experiences as a developer as well as some tutorials and interesting st
 
 [Visit portfolio](https://codinov.com)
 
+To make it work in development, create a .env.development.local file with your own token:
+
+```
+REACT_APP_GITHUB_API_TOKEN=mytokenoraccesskey
+```
+
+To make it work in production, remove the .env file at the root of the project to ensure
+your token is not divulgated on your git folder and add an environment variable called `REACT_APP_GITHUB_API_TOKEN` on your server with the value equal to your token/access key.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # Features
