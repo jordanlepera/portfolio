@@ -1,8 +1,6 @@
 # Portfolio
 
-[![Build Status](https://travis-ci.com/jordanlepera/portfolio.svg?branch=master)](https://travis-ci.com/jordanlepera/portfolio)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6ef7d47c-c3cf-49ec-80b8-6d1826e291d2/deploy-status)](https://app.netlify.com/sites/codinov/deploys)
+[![Build Status](https://travis-ci.com/jordanlepera/portfolio.svg?branch=master)](https://travis-ci.com/jordanlepera/portfolio) [![Netlify Status](https://api.netlify.com/api/v1/badges/6ef7d47c-c3cf-49ec-80b8-6d1826e291d2/deploy-status)](https://app.netlify.com/sites/codinov/deploys)
 
 My personal portfolio made with React. It is a showcase for the projects I develop and a blog
 about my experiences as a developer as well as some tutorials and interesting stuffs.
