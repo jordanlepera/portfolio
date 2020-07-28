@@ -23,7 +23,7 @@
   },
   "notfound-page": {
     "oops": "Oops !",
-    "page-not-found": "La page requested cannot be found.",
+    "page-not-found": "The requested page cannot be found.",
     "redirect-to-home": "Don't panic, you can go to the home page by clicking",
     "here": "here"
   }
