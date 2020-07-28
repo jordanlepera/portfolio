@@ -49,7 +49,7 @@ const projectsList = [
     boxShadowColor: "rgba(94, 94, 171, 0.5)",
   },
   {
-    url: "mamma-giovanna",
+    url: "mammagiovanna",
     title: "Mamma Giovanna",
     img: MammaGioImg,
     color: "white",
