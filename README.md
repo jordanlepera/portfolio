@@ -13,8 +13,7 @@ To make it work in development, create a .env.development.local file with your o
 REACT_APP_GITHUB_API_TOKEN=mytokenoraccesskey
 ```
 
-To make it work in production, remove the .env file at the root of the project to ensure
-your token is not divulgated on your git folder and add an environment variable called `REACT_APP_GITHUB_API_TOKEN` on your server with the value equal to your token/access key.
+To make it work in production, make sure your token is not present in any files that can divulgate sensitive data on your git folder and add an environment variable called `REACT_APP_GITHUB_API_TOKEN` on your server with the value equal to your token/access key.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
