@@ -38,7 +38,7 @@ const projectsList = [
     img: OpenAuthImg,
     color: "white",
     gridSize: 4,
-    boxShadowColor: "rgba(94, 94, 171, 0.5)",
+    boxShadowColor: "rgba(0, 0, 0, 0.35)",
   },
   {
     url: "inventory",
@@ -46,7 +46,7 @@ const projectsList = [
     img: InventoryImg,
     color: "white",
     gridSize: 4,
-    boxShadowColor: "rgba(94, 94, 171, 0.5)",
+    boxShadowColor: "rgba(0, 0, 0, 0.35)",
   },
   {
     url: "mammagiovanna",
@@ -54,7 +54,7 @@ const projectsList = [
     img: MammaGioImg,
     color: "white",
     gridSize: 4,
-    boxShadowColor: "rgba(94, 94, 171, 0.5)",
+    boxShadowColor: "rgba(0, 0, 0, 0.35)",
   },
   {
     url: "briscola",
@@ -62,7 +62,7 @@ const projectsList = [
     img: BriscolaImg,
     color: "white",
     gridSize: 8,
-    boxShadowColor: "rgba(94, 94, 171, 0.5)",
+    boxShadowColor: "rgba(0, 0, 0, 0.35)",
   },
   {
     url: "follower-analyzer",
@@ -70,7 +70,7 @@ const projectsList = [
     img: FollowerImg,
     color: "white",
     gridSize: 4,
-    boxShadowColor: "rgba(94, 94, 171, 0.5)",
+    boxShadowColor: "rgba(0, 0, 0, 0.35)",
   },
 ]
 
@@ -95,6 +95,7 @@ const Home = () => {
       targets: el,
       opacity: [0, 1],
       translateY: [40, 0],
+      translateZ: 0,
       duration: 1000,
       delay: i * 100,
       easing: "cubicBezier(0.165, 0.84, 0.44, 1)",
