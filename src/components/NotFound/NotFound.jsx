@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { NavLink } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import Typography from "@material-ui/core/Typography"
@@ -45,9 +45,22 @@ const ButtonLink = styled(NavLink)`
   color: #3d3d3d;
 `
 
+const floating = keyframes`
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+`
+
 const Image = styled.img`
   width: ${(props) => (props.matches ? "90%" : "50%")};
   height: auto;
+  animation: ${floating} 2s infinite ease-in-out;
 `
 
 const Container = styled.div`
