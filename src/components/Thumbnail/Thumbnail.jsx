@@ -95,7 +95,7 @@ const Title = styled.div`
   transform: translateZ(0) translateY(30px);
   white-space: pre-line;
   text-align: center;
-  will-change: transform opacity;
+  will-change: transform, opacity;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 `
 
@@ -106,24 +106,21 @@ const Desc = styled.div`
   transform: translateZ(0) translateY(30px);
   white-space: pre-line;
   text-align: center;
-  will-change: transform opacity;
+  will-change: transform, opacity;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 `
 
 const Image = styled.img`
   position: absolute;
-  /* opacity: 1; */
+  opacity: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(1);
-  transform: translateZ(0) scale(1);
   /* Enable hardware acceleration for smoother transition */
-  /* transform: translateZ(0); */
-  will-change: transform opacity;
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out,
-    filter 0.3s ease-out;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 `
 
 const Container = styled.div`
@@ -131,7 +128,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: linear-gradient(45deg, #3f96ff, #8739e5); */
+  background: linear-gradient(45deg, #3f96ff, #8739e5);
   transform: translateZ(0) translateY(0);
   box-shadow: 0px 0px 0px 0px ${(props) => props.boxShadowColor};
   color: ${(props) => props.textColor};
@@ -142,14 +139,12 @@ const Container = styled.div`
   height: 275px;
   overflow: hidden;
   object-fit: cover;
-  will-change: transform opacity box-shadow;
+  will-change: transform, opacity, box-shadow;
   &:hover {
     cursor: pointer;
   }
   &:hover ${Image} {
-    /* opacity: 0; */
-    filter: brightness(0.15);
-    transform: translateZ(0) scale(1.3);
+    opacity: 0;
   }
   &:hover ${Title} {
     transform: translateY(0px);
