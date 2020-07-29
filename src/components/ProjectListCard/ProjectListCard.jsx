@@ -7,10 +7,11 @@ import Avatar from "@material-ui/core/Avatar"
 import uniqueId from "lodash/uniqueId"
 import { NavLink } from "react-router-dom"
 import { FaJsSquare, FaCss3Alt, FaHtml5, FaPython } from "react-icons/fa"
-import logo from "../../img/codinov_logo1.svg"
+import projectPlaceholder from "../../img/project-placeholder.svg"
 
 type ProjectInfo = {
   projectData: any,
+  flippedProps: any,
 }
 
 const iconList = [
@@ -37,7 +38,7 @@ const calculateAccessibleTextColor = (hexacode) => {
 }
 
 const ProjectListCard = (props: ProjectInfo) => {
-  const { projectData } = props
+  const { projectData, flippedProps } = props
   const matches = useMediaQuery("(max-width:959px)")
 
   const languagesChips = projectData.node.languages.edges.map((language) => (
@@ -60,13 +61,14 @@ const ProjectListCard = (props: ProjectInfo) => {
   ))
 
   return (
-    <CardLink to={`/projects/${projectData.node.name}`}>
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <CardLink to={`/projects/${projectData.node.name}`} {...flippedProps}>
       <CardContainer matches={matches}>
         <CardImage
           src={
             projectData.node.usesCustomOpenGraphImage
               ? projectData.node.openGraphImageUrl
-              : logo
+              : projectPlaceholder
           }
           alt="repository image"
           matches={matches}
@@ -120,14 +122,16 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: ${(props) => (props.matches ? "column" : "row")};
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-  margin: 30px 0;
+  margin: 20px 0;
   padding: 20px;
-  border: 1px solid #dddddd;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
+  transform: translateZ(0);
   &:hover {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-    transform: translateY(-10px) scale3d(1.01, 1.01, 1.01);
+    transform: translateZ(0) translateY(-10px) scale3d(1.02, 1.02, 1.02);
     cursor: pointer;
+    border: 1px solid transparent;
   }
 `
 
