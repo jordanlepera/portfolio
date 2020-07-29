@@ -33,7 +33,7 @@ const iconList = [
 ]
 
 const calculateAccessibleTextColor = (hexacode) => {
-  return parseInt(hexacode.substring(1), 16) > 8947848 ? "#3D3D3D" : "white"
+  return parseInt(hexacode.substring(1), 16) > 15099493 ? "#3D3D3D" : "white"
 }
 
 const ProjectListCard = (props: ProjectInfo) => {
@@ -43,7 +43,7 @@ const ProjectListCard = (props: ProjectInfo) => {
   const languagesChips = projectData.node.languages.edges.map((language) => (
     <Chip
       label={language.node.name}
-      size="small"
+      size={matches ? "small" : "medium"}
       avatar={
         <Avatar>
           {iconList.filter((icon) => icon.name === language.node.name)[0].icon}
