@@ -127,6 +127,7 @@ const CardContainer = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   transform: translateZ(0);
+  will-change: box-shadow, transform, border;
   &:hover {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     transform: translateZ(0) translateY(-10px) scale3d(1.02, 1.02, 1.02);
