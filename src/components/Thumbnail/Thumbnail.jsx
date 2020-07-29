@@ -144,7 +144,7 @@ const Container = styled.div`
     cursor: pointer;
   }
   &:hover ${Image} {
-    opacity: 0;
+    opacity: 0.05;
   }
   &:hover ${Title} {
     transform: translateY(0px);
