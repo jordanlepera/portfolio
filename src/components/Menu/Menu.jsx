@@ -254,8 +254,8 @@ const DialogContainer = styled.div`
 
 const IconButton = styled.div`
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 25.5px;
+  right: 25px;
   &:hover {
     cursor: pointer;
   }
