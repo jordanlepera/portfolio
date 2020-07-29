@@ -57,7 +57,12 @@ const Projects = () => {
       query: gql`
         {
           viewer {
-            repositories(first: 20, privacy: PUBLIC, ownerAffiliations: OWNER) {
+            repositories(
+              first: 20
+              privacy: PUBLIC
+              ownerAffiliations: OWNER
+              orderBy: { field: CREATED_AT, direction: DESC }
+            ) {
               edges {
                 node {
                   id
