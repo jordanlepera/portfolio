@@ -1,30 +1,33 @@
 // @flow
 import * as React from "react"
-import PropTypes from "prop-types"
 import { useTranslation } from "react-i18next"
+import Typography from "@material-ui/core/Typography"
+import Breadcrumbs from "@material-ui/core/Breadcrumbs"
+import Link from "@material-ui/core/Link"
 
 type Props = {
-  test?: string,
+  projectData: any,
 }
 
 const Project = (props: Props) => {
-  const { test } = props
+  const { projectData } = props
   const { t } = useTranslation()
 
   return (
-    <div>
-      {t("hello-world")}
-      {test}
-    </div>
+    <>
+      <Typography variant="h3">{t("projects")}</Typography>
+      <Breadcrumbs aria-label="breadcrumb">
+        <Link color="inherit" href="/">
+          {t("home")}
+        </Link>
+        <Link color="inherit" href="/projects">
+          {t("projects")}
+        </Link>
+        <Typography color="textPrimary">{projectData}</Typography>
+      </Breadcrumbs>
+      <div>{projectData}</div>
+    </>
   )
-}
-
-Project.defaultProps = {
-  test: "",
-}
-
-Project.propTypes = {
-  test: PropTypes.string,
 }
 
 export default Project

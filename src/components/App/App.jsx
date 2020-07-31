@@ -11,7 +11,7 @@ import Home from "../../pages/Home/Home"
 import Projects from "../../pages/Projects/Projects"
 import Articles from "../../pages/Articles/Articles"
 import About from "../../pages/About/About"
-// import Project from "../Project/Project"
+import Project from "../Project/Project"
 import Loading from "../Loading/Loading"
 import NotFound from "../NotFound/NotFound"
 // import mammagiovanna from "../../documents/projects/mammagiovanna.md"
@@ -32,7 +32,7 @@ const ProjectPage = () => {
 
   return (
     <div>
-      <h3>Project ID: {projectId}</h3>
+      <Project projectData={projectId} />
       {/* <div>{mammagiovanna}</div> */}
     </div>
   )

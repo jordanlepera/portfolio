@@ -2,98 +2,81 @@
 import * as React from "react"
 import styled from "styled-components"
 import uniqueId from "lodash/uniqueId"
+import { Flipper, Flipped } from "react-flip-toolkit"
+import anime from "animejs"
 import Typography from "@material-ui/core/Typography"
 import Breadcrumbs from "@material-ui/core/Breadcrumbs"
 import Link from "@material-ui/core/Link"
 import Fade from "@material-ui/core/Fade"
 import { useTranslation } from "react-i18next"
-import {
-  ApolloClient,
-  InMemoryCache,
-  gql,
-  createHttpLink,
-} from "@apollo/client"
-import { setContext } from "@apollo/client/link/context"
+import { useQuery } from "@apollo/client"
 import ProjectListCard from "../../components/ProjectListCard/ProjectListCard"
+import Loading from "../../components/Loading/ComponentLoading"
+import QueryService from "../../queries/query.service"
 
-const httpLink = createHttpLink({
-  uri: "https://api.github.com/graphql",
-})
+// wait for exiting elements to be removed
+// next, animate updating elements
+// finally, after updates are complete,
+// animate entering elements
+const exitThenFlipThenEnter = ({
+  hideEnteringElements,
+  animateEnteringElements,
+  animateExitingElements,
+  animateFlippedElements,
+}) => {
+  hideEnteringElements()
+  animateExitingElements()
+    .then(animateFlippedElements)
+    .then(animateEnteringElements)
+}
 
-const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
-  const token = process.env.REACT_APP_GITHUB_API_TOKEN
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `bearer ${token}` : "",
-    },
-  }
-})
+const animateElementIn = (el, i) => {
+  anime({
+    targets: el,
+    opacity: [0, 1],
+    translateX: [100, 0],
+    translateZ: 0,
+    duration: 1000,
+    delay: i * 100,
+    easing: "cubicBezier(0.165, 0.84, 0.44, 1)",
+  })
+}
 
-const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-})
+const ContentContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+`
 
 const Projects = () => {
   const { t } = useTranslation()
-  const [projects, setProjects] = React.useState([])
+  const { loading, error, data } = useQuery(QueryService.getProjects(), {
+    errorPolicy: "all",
+  })
 
-  const ProjectsList = () =>
-    projects.map((repo) => (
-      <ProjectListCard
-        projectData={repo}
+  const ProjectList = () => {
+    if (loading) return <Loading />
+    if (error)
+      return (
+        <>
+          {error.graphQLErrors.map(({ message }) => (
+            <span key={uniqueId("error-message")}>{message}</span>
+          ))}
+        </>
+      )
+    return data.viewer.repositories.edges.map((repo) => (
+      <Flipped
+        flipId={uniqueId("project-list-card-")}
+        onAppear={animateElementIn}
         key={uniqueId("project-list-card-")}
-      />
+      >
+        {(flippedProps) => (
+          <ProjectListCard projectData={repo} flippedProps={flippedProps} />
+        )}
+      </Flipped>
     ))
-
-  client
-    .query({
-      query: gql`
-        {
-          viewer {
-            repositories(
-              first: 20
-              privacy: PUBLIC
-              ownerAffiliations: OWNER
-              orderBy: { field: CREATED_AT, direction: DESC }
-            ) {
-              edges {
-                node {
-                  id
-                  createdAt
-                  description
-                  homepageUrl
-                  name
-                  owner {
-                    avatarUrl(size: 100)
-                    login
-                  }
-                  languages(first: 10) {
-                    edges {
-                      node {
-                        color
-                        name
-                      }
-                      size
-                    }
-                    totalSize
-                  }
-                  pushedAt
-                  openGraphImageUrl
-                  usesCustomOpenGraphImage
-                  url
-                }
-              }
-            }
-          }
-        }
-      `,
-    })
-    .then((result) => {
-      setProjects(result.data.viewer.repositories.edges)
-    })
+  }
 
   return (
     <Fade in timeout={500}>
@@ -105,11 +88,25 @@ const Projects = () => {
           </Link>
           <Typography color="textPrimary">{t("projects")}</Typography>
         </Breadcrumbs>
-        <ProjectsList />
+        <Space />
+        <Flipper
+          handleEnterUpdateDelete={exitThenFlipThenEnter}
+          flipKey={data}
+          spring="gentle"
+          decisionData={data}
+          element={ContentContainer}
+        >
+          <ProjectList />
+        </Flipper>
       </Container>
     </Fade>
   )
 }
+
+const Space = styled.div`
+  width: 100%;
+  height: 10px;
+`
 
 const Container = styled.div`
   width: 90%;
