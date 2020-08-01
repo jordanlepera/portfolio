@@ -26,5 +26,20 @@
     "page-not-found": "La page demandée est introuvable.",
     "redirect-to-home": "Pas de panique, vous pouvez rejoindre la page d'accueil du site en cliquant",
     "here": "ici"
+  },
+  "project-page": {
+    "project-name": "Nom du projet",
+    "current-version": "Version actuelle",
+    "github-repository": "Dépôt Github",
+    "current-status": "Status actuel",
+    "development": "Développement",
+    "production": "Production",
+    "last-commit": "Dernier commit",
+    "website": "Site web",
+    "programmation-languages": "Langages de programmation",
+    "techno-used": "Technologies utilisées",
+    "description": "Description",
+    "features": "Fonctionnalités",
+    "author": "Autheur"
   }
 }

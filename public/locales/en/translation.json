@@ -26,5 +26,20 @@
     "page-not-found": "The requested page cannot be found.",
     "redirect-to-home": "Don't panic, you can go to the home page by clicking",
     "here": "here"
+  },
+  "project-page": {
+    "project-name": "Project name",
+    "current-version": "Current version",
+    "github-repository": "Github repository",
+    "current-status": "Current status",
+    "development": "Development",
+    "production": "Production",
+    "last-commit": "Last commit",
+    "website": "Website",
+    "programmation-languages": "Programmation languages",
+    "techno-used": "Technologies used",
+    "description": "Description",
+    "features": "Features",
+    "author": "Author"
   }
 }
