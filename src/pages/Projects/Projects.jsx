@@ -65,6 +65,7 @@ const Projects = () => {
           ))}
         </>
       )
+
     return data.viewer.repositories.edges.map((repo) => (
       <Flipped
         flipId={uniqueId("project-list-card-")}

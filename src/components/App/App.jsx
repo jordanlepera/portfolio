@@ -30,12 +30,7 @@ const ArticlePage = () => {
 const ProjectPage = () => {
   const { projectId } = useParams()
 
-  return (
-    <div>
-      <Project projectData={projectId} />
-      {/* <div>{mammagiovanna}</div> */}
-    </div>
-  )
+  return <Project projectData={projectId} />
 }
 
 const App = () => {
