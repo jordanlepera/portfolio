@@ -138,8 +138,10 @@ const CardContainer = styled.div`
 
 const CardImage = styled.img`
   width: ${(props) => (props.matches ? "100%" : "200px")};
-  height: 200px;
+  height: auto;
+  max-height: 200px;
   object-fit: cover;
+  object-position: center;
   border-radius: 10px;
 `
 
