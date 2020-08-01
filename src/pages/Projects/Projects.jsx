@@ -55,6 +55,10 @@ const Projects = () => {
     errorPolicy: "all",
   })
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const ProjectList = () => {
     if (loading) return <Loading />
     if (error)
