@@ -26,12 +26,12 @@ const Thumbnail = (props: Props) => {
   const animateZoom = (el) => {
     anime({
       targets: el,
-      scale: 1.01,
+      scale: 1.02,
       translateY: -10,
       translateZ: 0,
       boxShadow: [
         `0px 0px 0px 0px ${boxShadowColor}`,
-        `0px 10px 20px 0px ${boxShadowColor}`,
+        `0px 10px 30px 0px ${boxShadowColor}`,
       ],
       duration: 500,
       delay: 0,
@@ -46,7 +46,7 @@ const Thumbnail = (props: Props) => {
       translateY: 0,
       translateZ: 0,
       boxShadow: [
-        `0px 10px 20px 0px ${boxShadowColor}`,
+        `0px 10px 30px 0px ${boxShadowColor}`,
         `0px 0px 0px 0px ${boxShadowColor}`,
       ],
       duration: 500,
