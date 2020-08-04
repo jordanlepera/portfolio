@@ -8,7 +8,13 @@ import Chip from "@material-ui/core/Chip"
 import Avatar from "@material-ui/core/Avatar"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import uniqueId from "lodash/uniqueId"
-import { FaJsSquare, FaCss3Alt, FaHtml5, FaPython } from "react-icons/fa"
+import {
+  FaJsSquare,
+  FaCss3Alt,
+  FaHtml5,
+  FaPython,
+  FaCode,
+} from "react-icons/fa"
 import Loading from "../Loading/ComponentLoading"
 import QueryService from "../../queries/query.service"
 import projectPlaceholder from "../../img/project-placeholder.svg"
@@ -77,7 +83,11 @@ const ProjectHeader = (props: ProjectData) => {
       label={elem.node.name}
       avatar={
         <Avatar>
-          {iconList.filter((icon) => icon.name === elem.node.name)[0].icon}
+          {iconList.filter((icon) => icon.name === elem.node.name)[0] ? (
+            iconList.filter((icon) => icon.name === elem.node.name)[0].icon
+          ) : (
+            <FaCode />
+          )}
         </Avatar>
       }
       style={{

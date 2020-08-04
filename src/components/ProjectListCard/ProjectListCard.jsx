@@ -6,7 +6,13 @@ import Chip from "@material-ui/core/Chip"
 import Avatar from "@material-ui/core/Avatar"
 import uniqueId from "lodash/uniqueId"
 import { NavLink } from "react-router-dom"
-import { FaJsSquare, FaCss3Alt, FaHtml5, FaPython } from "react-icons/fa"
+import {
+  FaJsSquare,
+  FaCss3Alt,
+  FaHtml5,
+  FaPython,
+  FaCode,
+} from "react-icons/fa"
 import projectPlaceholder from "../../img/project-placeholder.svg"
 
 type ProjectInfo = {
@@ -47,7 +53,11 @@ const ProjectListCard = (props: ProjectInfo) => {
       size={matches ? "small" : "medium"}
       avatar={
         <Avatar>
-          {iconList.filter((icon) => icon.name === language.node.name)[0].icon}
+          {iconList.filter((icon) => icon.name === language.node.name)[0] ? (
+            iconList.filter((icon) => icon.name === language.node.name)[0].icon
+          ) : (
+            <FaCode />
+          )}
         </Avatar>
       }
       style={{
