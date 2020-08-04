@@ -120,6 +120,7 @@ const CardInfoContainer = styled.div`
 
 const CardRepoName = styled.div`
   color: #3d3d3d;
+  word-wrap: break-word;
 `
 
 const CardRepoDesc = styled.div`

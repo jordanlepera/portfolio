@@ -122,7 +122,7 @@ const ProjectHeader = (props: ProjectData) => {
                 <SubtitlePanelSection>
                   {t("project-page.project-name")}
                 </SubtitlePanelSection>
-                {data.viewer.repository.name}
+                <DivTextOverFlow>{data.viewer.repository.name}</DivTextOverFlow>
               </PanelSubSection>
               {data.viewer.repository.languages.edges.filter(
                 (x) => x.node.name === "Python"
@@ -143,12 +143,12 @@ const ProjectHeader = (props: ProjectData) => {
                 <SubtitlePanelSection>
                   {t("project-page.github-repository")}
                 </SubtitlePanelSection>
-                <Link
+                <LinkEllipsis
                   href={`https://github.com/jordanlepera/${projectData}`}
                   target="blank"
                 >
                   https://github.com/jordanlepera/{projectData}
-                </Link>
+                </LinkEllipsis>
               </PanelSubSection>
             </PanelTopSectionColumn>
             <PanelTopSectionColumn>
@@ -172,12 +172,12 @@ const ProjectHeader = (props: ProjectData) => {
                   <SubtitlePanelSection>
                     {t("project-page.website")}
                   </SubtitlePanelSection>
-                  <Link
+                  <LinkEllipsis
                     href={data.viewer.repository.homepageUrl}
                     target="blank"
                   >
                     {data.viewer.repository.homepageUrl}
-                  </Link>
+                  </LinkEllipsis>
                 </PanelSubSection>
               ) : (
                 ""
@@ -203,6 +203,14 @@ const ProjectHeader = (props: ProjectData) => {
     </Container>
   )
 }
+
+const DivTextOverFlow = styled.div`
+  word-wrap: break-word;
+`
+
+const LinkEllipsis = styled(Link)`
+  word-wrap: break-word;
+`
 
 const SubtitlePanelSection = styled.div`
   font-weight: 700;
