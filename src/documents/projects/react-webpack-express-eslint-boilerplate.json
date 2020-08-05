@@ -1,19 +1,19 @@
 {
   "fr": {
     "desc": [
-      "A boilerplate for React project that want a lot of flexibility. It allows to customize your project to fit exactly what you need. It contains a custom Babel, Webpack, ESLint, Prettier config as well as a custom Express.js server.",
-      "Don’t hesitate to fork it !"
+      "Un boilerplate pour les projets React qui veulent beaucoup de flexibilité. Il permet de customiser le projet pour qu'il corresponde exactement à vos besoins. Il contient une configuration personnalisée de Babel, Webpack, ESLint, Prettier et aussi un serveur Express.js customisé.",
+      "N'hésitez pas à forker !"
     ],
     "features": [
-      "Custom Babel config",
-      "Custom Webpack config",
-      "Custom Express.js server",
-      "Custom ESLint config"
+      "Configuration de Babel personnalisée",
+      "Configuration de Webpack personnalisée",
+      "Serveur Express.js customisé",
+      "Configuration de ESLint personnalisée"
     ],
     "next-steps": [
-      "Add a static type checking library like Flow or TypeScript",
-      "Add Storybook",
-      "Add Redux"
+      "Ajouter une librairie de vérification de type statique comme Flow ou TypeScript",
+      "Ajouter Storybook",
+      "Ajouter Redux"
     ],
     "enhancements": []
   },

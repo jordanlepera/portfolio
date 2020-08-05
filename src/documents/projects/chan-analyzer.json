@@ -1,17 +1,19 @@
 {
   "fr": {
     "desc": [
-      "A python project which goal is to make automation on 4chan boards. It looks for keywords you type in, in the selected boards and count the number of occurences."
+      "Un projet Python dont le but est d'automatiser des actions sur les tableaux de 4chan. Le programme cherche des mots-clés que vous entrez dans les tableaux sélectionnés et compte le nombre d'occurence."
     ],
     "features": [
-      "4chan API integration",
-      "Count keywords in board (ex: BTC in /biz/)"
+      "Intégration de l'API 4chan",
+      "Compte les mots-clés dans les tableaux définis (ex: \"BTC\" dans \"/biz/\")"
     ],
     "next-steps": [
-      "Support the research of multiple keywords",
-      "Create an historic by persisting data"
+      "Support de la recherche de plusieurs mots-clés",
+      "Créer un historique en persistant les données"
     ],
-    "enhancements": ["Add a user-friendly graphical interface to display data"]
+    "enhancements": [
+      "Ajotuer une interface graphique agréable pour afficher les données"
+    ]
   },
   "en": {
     "desc": [

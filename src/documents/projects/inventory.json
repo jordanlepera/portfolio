@@ -1,59 +1,63 @@
 {
   "fr": {
     "desc": [
-      "Portfolio est en fait le site sur lequel vous lisez ces lignes ! C'est un site web pour exposer mes projets, et un blog ou je vais écrire des articles en rapport avec la programmation et d'autres sujets comme le design ou encore la musique électronique.",
-      "Faîtes-vous plaisir si vous souhaitez forker ce dépôt !"
+      "Inventory est une application mobile qui vise à réaliser des inventaires pour les TPE/PME comme les restaurants, coiffeurs, et autres petits commerces.",
+      "Cette application est disponible aussi bien pour iOS que pour Android.",
+      "Elle permet à l'utilisateur d'ajouter, modifier ou supprimer des articles avec une quantité, un prix et une catégorie. L'utilisateur peut aussi créer des catégories personnalisées.",
+      "L'application peut exporter l'inventaire au format CSV. Les données sont enregistrées dans une base de donnée MongoDB.",
+      "Ce projet à été créer en utilisant la CLI de ignite et le boilerplate andross."
     ],
     "features": [
-      "i18n",
-      "Integration de l'API GraphQL de Github",
-      "Page contenant projets et articles",
-      "Design Responsif",
-      "GraphQL / Apollo Client"
+      "Ajouter, Modifier, Supprimer des articles et catégories",
+      "Export de l'inventaire en CSV",
+      "Base de donnée MongoDB",
+      "Design Néomorphique",
+      "Thème Sombre/Clair",
+      "Disponible pour Android & iOS"
     ],
     "next-steps": [
-      "Améliorer le support de l'affichage en 4K",
-      "Ajouter une base de donnée MongoDB pour stocker les articles"
+      "Implementer GraphQL / Apollo Client",
+      "Migrer du système de base de donnée Google Cloud Firestore vers MongoDB",
+      "Implementer une liste infinie optimisée",
+      "Ajouter l'export de l'inventaire en CSV"
     ],
-    "enhancements": [
-      "Ajouter une interface d'administration pour gérer le contenu dynamiquement comme la couleur du thème graphique, les sections, les articles",
-      "Passer sur un système de rendu côté serveur comme Next.js"
-    ]
+    "enhancements": []
   },
   "en": {
     "desc": [
-      "Portfolio is actually the current site you are reading these lines on ! It is a website to expose my projects, and a blog where I will write articles about programming and others topics like design, electronic music.",
-      "You can feel free to fork it !"
+      "Inventory is an app aiming to realize inventory for little businesses like restaurants, hairdressers, retailing shop and many others.",
+      "The app is available on Android as well as on iOS.",
+      "It provides articles the user can add, update or delete with a quantity, a price dans a category. The user can also create custom categories.",
+      "The application is able to export data to CSV file. Data are stored in a mongoDB database.",
+      "This project has been created using ignite CLI with andross boilerplate."
     ],
     "features": [
-      "i18n",
-      "Github GraphQL API integration",
-      "Projects and Articles pages",
-      "Responsive design",
-      "GraphQL / Apollo Client"
+      "Add, update, delete articles and categories",
+      "CSV export",
+      "MongoDB database",
+      "Neumorphism design",
+      "Dark / Light themes",
+      "Available for Android & iOS"
     ],
     "next-steps": [
-      "Improve 4K support",
-      "Add a mongoDB database to store articles"
+      "Implement GraphQL / Apollo Client",
+      "Migrate from cloud firestore database system to mongoDB",
+      "Implement optimized infinite list",
+      "Add CSV export"
     ],
-    "enhancements": [
-      "Add an administration interface to manage content dynamically like pages, project or articles",
-      "Passing on a server-side rendering system like Next.js or Gatsby.js"
-    ]
+    "enhancements": []
   },
   "techno": [
-    "React.js",
+    "React-Native",
     "GraphQL",
     "ESLint",
-    "Flow",
-    "Styled-Components",
-    "React-Router",
-    "React-i18next",
-    "React-Flip-Toolkit",
-    "Material-UI",
-    "Create-React-App",
+    "Webpack",
+    "Babel",
+    "Ignite",
+    "React-Navigation",
+    "Redux",
+    "MongoDB",
     "Jest",
-    "Enzyme",
-    "Netlify"
+    "CSV"
   ]
 }

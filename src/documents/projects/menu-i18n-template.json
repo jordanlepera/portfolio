@@ -1,10 +1,11 @@
 {
   "fr": {
     "desc": [
-      "This project is a template I realized in order to make a base for creating rapidly digital menu for restaurant. This project is born following the COVID-19 crisis and the need to set up contactless solution for businesses.",
-      "The goal is also to provide a QR code printed to be sticked on the restaurant tables. Customers will scan the QR code to access the menu.",
-      "It is created with next.js technology and material-ui component library. It also features menu translation thanks to next-translate. It is based on JAMStack and can be deployed on Netlify.",
-      "You can view an example in production of this template for a client I create a digital menu here: https://orabbits.netlify.app"
+      "Ce projet est un template que j'ai développé afin de créer une base pour réaliser rapidement des menus digitaux pour les restaurants. Ce projet est né suite à la crise du COVID-19 et le besoin de mettre en place des solutions sans contacts pour les entreprises.",
+      "Le but est aussi de fournir un QR code imprimé et plastifié qui sera collé sur les tables du restaurant. Les clients pourront scanner le QR code pour afficher la carte du restaurant sur leur smartphone.",
+      "Ce projet a été développé avec les technologies Next.js et la librairie de composant Material-UI. Le menu digital est disponible en plusieurs langues grâce à next-translate. Le projet est deployé sur Netlify et est basé sur le principe de JAMStack.",
+      "Vous pouvez voir un exemple en production de ce template pour un client à qui j'ai réalisé le menu digital à cette adresse: https://orabbits.netlify.app",
+      "Le client à pu choisir ses couleurs et sa police, ainsi que l'image d'en-tête."
     ],
     "features": [
       "i18n",
@@ -23,7 +24,8 @@
       "This project is a template I realized in order to make a base for creating rapidly digital menu for restaurant. This project is born following the COVID-19 crisis and the need to set up contactless solution for businesses.",
       "The goal is also to provide a QR code printed to be sticked on the restaurant tables. Customers will scan the QR code to access the menu.",
       "It is created with next.js technology and material-ui component library. It also features menu translation thanks to next-translate. It is based on JAMStack and can be deployed on Netlify.",
-      "You can view an example in production of this template for a client I create a digital menu here: https://orabbits.netlify.app"
+      "You can view an example in production of this template for a client I create a digital menu here: https://orabbits.netlify.app",
+      "The customer had the possibility to choose the colors the wanted as well as the font and the header image"
     ],
     "features": [
       "i18n",

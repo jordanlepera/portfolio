@@ -1,21 +1,21 @@
 {
   "fr": {
     "desc": [
-      "Open-authenticator is a desktop app that generate two factors authentication code (TOTP, HOTP) for your preferred app and services ! It is very simple to use and work on major OS (Windows, Linux, macOS).",
-      "Don’t use your phone anymore each time you need to authenticate."
+      "Open-authenticator est une application pour ordinateur qui génère des codes pour l'authentification à double facteur (TOTP, HOTP) pour vos applications et services préférés ! C'est très simple d'utilisation et fonctionne sur les principaux systèmes d'exploitations (Windows, Linux, macOS).",
+      "Plus besoin de sortir son téléphone à chaque fois qu'il faut s'authentifier !"
     ],
     "features": [
       "i18n",
       "Electron.js",
-      "Responsive design",
-      "Dark / Light theme",
-      "TOTP / HOTP"
+      "Design Responsif",
+      "Thème sombre/clair",
+      "TOTP/HOTP"
     ],
     "next-steps": [
-      "Add Dark / Light theme",
-      "Add key encryption",
-      "Add QR code scanning",
-      "Manage HOTP"
+      "Ajouter le thème sombre/clair",
+      "Chiffrer les clés",
+      "Ajouter la possibilité de scanner le QR code pour ajouter un nouveau générateur",
+      "Gérer les HOTP"
     ],
     "enhancements": []
   },
@@ -34,7 +34,7 @@
     "next-steps": [
       "Add Dark / Light theme",
       "Add key encryption",
-      "Add QR code scanning",
+      "Add QR code scanning to add a new generator",
       "Manage HOTP"
     ],
     "enhancements": []
