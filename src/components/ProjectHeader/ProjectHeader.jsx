@@ -101,9 +101,12 @@ const ProjectHeader = (props: ProjectData) => {
     />
   ))
 
-  const technoChips = techno.map((elem) => (
-    <ChipStyled key={uniqueId("techno-chip-")} label={elem} />
-  ))
+  const technoChips =
+    techno && techno.length !== 0
+      ? techno.map((elem) => (
+          <ChipStyled key={uniqueId("techno-chip-")} label={elem} />
+        ))
+      : ""
 
   return (
     <Container>
