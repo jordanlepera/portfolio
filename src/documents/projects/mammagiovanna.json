@@ -1,14 +1,14 @@
 {
   "fr": {
     "desc": [
-      "Mamma Giovanna est un restaurant italien basé à Colmar en France. Ce projet est son site web qui vise à informer des heures d'ouvertures, moyen de contact, des réseaux sociaux, de la carte et d'autres éléments.",
-      "Le projet se base sur next.js pour un rendu côté serveur et utilise la librairie de composant de material-ui. Le site web est traduit en 4 langues (actuellement Français, Anglais, Allemand et Italien).",
-      "Ce projet est un fork de menu-i18n-template, Ils ont donc plsu ou moins la même roadmap."
+      "Mamma Giovanna est un restaurant italien basé à Colmar en France. Ce projet est son site web qui vise à informer des heures d'ouvertures, moyens de contact, des réseaux sociaux, de la carte et d'autres éléments.",
+      "Le projet se base sur Next.js pour un rendu côté serveur et utilise la librairie de composant de Material-UI. Le site web est traduit en 4 langues (actuellement Français, Anglais, Allemand et Italien).",
+      "Ce projet est un fork de menu-i18n-template, Ils ont donc plus ou moins la même roadmap."
     ],
     "features": [
       "i18n",
-      "Rendu côté serveur (next.js)",
-      "Librairie Material-ui / styled-components",
+      "Rendu côté serveur (Next.js)",
+      "Librairie Material-UI / styled-components",
       "Design Responsif"
     ],
     "next-steps": ["Lié à une base de donnée grâce à GraphQL"],

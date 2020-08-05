@@ -6,8 +6,8 @@
     ],
     "features": [
       "i18n",
-      "Integration de l'API GraphQL de Github",
-      "Page contenant projets et articles",
+      "Intégration de l'API GraphQL de Github",
+      "Page contenant projets et articles pour blog",
       "Design Responsif",
       "GraphQL / Apollo Client"
     ],

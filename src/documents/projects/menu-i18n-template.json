@@ -9,8 +9,8 @@
     ],
     "features": [
       "i18n",
-      "Rendu côté serveur (next.js)",
-      "Librairie Material-ui / styled-components",
+      "Rendu côté serveur (Next.js)",
+      "Librairie Material-UI / styled-components",
       "Design Responsif"
     ],
     "next-steps": ["Lié à une base de donnée grâce à GraphQL"],

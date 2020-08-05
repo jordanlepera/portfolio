@@ -22,14 +22,14 @@
   "en": {
     "desc": [
       "Open-authenticator is a desktop app that generate two factors authentication code (TOTP, HOTP) for your preferred app and services ! It is very simple to use and work on major OS (Windows, Linux, macOS).",
-      "Don’t use your phone anymore each time you need to authenticate."
+      "Don’t use your phone anymore each time you need to authenticate !"
     ],
     "features": [
       "i18n",
       "Electron.js",
       "Responsive design",
-      "Dark / Light theme",
-      "TOTP / HOTP"
+      "Dark/Light theme",
+      "TOTP/HOTP"
     ],
     "next-steps": [
       "Add Dark / Light theme",

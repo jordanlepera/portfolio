@@ -11,7 +11,7 @@
       "Configuration de ESLint personnalisée"
     ],
     "next-steps": [
-      "Ajouter une librairie de vérification de type statique comme Flow ou TypeScript",
+      "Ajouter une librairie pour la vérification de type statique comme Flow ou TypeScript",
       "Ajouter Storybook",
       "Ajouter Redux"
     ],

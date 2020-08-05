@@ -1,11 +1,11 @@
 {
   "fr": {
     "desc": [
-      "Inventory est une application mobile qui vise à réaliser des inventaires pour les TPE/PME comme les restaurants, coiffeurs, et autres petits commerces.",
+      "Inventory est une application mobile qui permet de réaliser des inventaires pour les TPE/PME comme les restaurants, coiffeurs et autres petits commerces.",
       "Cette application est disponible aussi bien pour iOS que pour Android.",
       "Elle permet à l'utilisateur d'ajouter, modifier ou supprimer des articles avec une quantité, un prix et une catégorie. L'utilisateur peut aussi créer des catégories personnalisées.",
       "L'application peut exporter l'inventaire au format CSV. Les données sont enregistrées dans une base de donnée MongoDB.",
-      "Ce projet à été créer en utilisant la CLI de ignite et le boilerplate andross."
+      "Ce projet à été créer en utilisant la CLI Ignite et le boilerplate Andross."
     ],
     "features": [
       "Ajouter, Modifier, Supprimer des articles et catégories",
@@ -16,9 +16,9 @@
       "Disponible pour Android & iOS"
     ],
     "next-steps": [
-      "Implementer GraphQL / Apollo Client",
+      "Implémenter GraphQL / Apollo Client",
       "Migrer du système de base de donnée Google Cloud Firestore vers MongoDB",
-      "Implementer une liste infinie optimisée",
+      "Implémenter une liste infinie optimisée",
       "Ajouter l'export de l'inventaire en CSV"
     ],
     "enhancements": []
