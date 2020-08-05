@@ -1,0 +1,49 @@
+{
+  "fr": {
+    "desc": [
+      "A boilerplate for React project that want a lot of flexibility. It allows to customize your project to fit exactly what you need. It contains a custom Babel, Webpack, ESLint, Prettier config as well as a custom Express.js server.",
+      "Don’t hesitate to fork it !"
+    ],
+    "features": [
+      "Custom Babel config",
+      "Custom Webpack config",
+      "Custom Express.js server",
+      "Custom ESLint config"
+    ],
+    "next-steps": [
+      "Add a static type checking library like Flow or TypeScript",
+      "Add Storybook",
+      "Add Redux"
+    ],
+    "enhancements": []
+  },
+  "en": {
+    "desc": [
+      "A boilerplate for React project that want a lot of flexibility. It allows to customize your project to fit exactly what you need. It contains a custom Babel, Webpack, ESLint, Prettier config as well as a custom Express.js server.",
+      "Don’t hesitate to fork it !"
+    ],
+    "features": [
+      "Custom Babel config",
+      "Custom Webpack config",
+      "Custom Express.js server",
+      "Custom ESLint config"
+    ],
+    "next-steps": [
+      "Add a static type checking library like Flow or TypeScript",
+      "Add Storybook",
+      "Add Redux"
+    ],
+    "enhancements": []
+  },
+  "techno": [
+    "React.js",
+    "Node.js",
+    "Express.js",
+    " Babel",
+    "Webpack",
+    "ESLint",
+    "Prettier",
+    "Jest",
+    "Enzyme"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "fr": {
+    "desc": [
+      "Un CRA (create-react-app) projet basique avec une configuration ESLint. J'ai fais ce projet pour ne pas avoir a refaire à chaque fois la configuration d'ESLint sur un projet CRA."
+    ],
+    "features": ["Configuration Airbnb ESLint"],
+    "next-steps": [],
+    "enhancements": []
+  },
+  "en": {
+    "desc": [
+      "A basic CRA (create-react-app) with ESLint configuration. I made this project to not have to start from scratch each time I want to do a project with CRA."
+    ],
+    "features": ["Airbnb ESLint configuration"],
+    "next-steps": [],
+    "enhancements": []
+  },
+  "techno": ["React.js", "ESLint", "React-Router"]
+}

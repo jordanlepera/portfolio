@@ -1,0 +1,49 @@
+{
+  "fr": {
+    "desc": [
+      "This project is a template I realized in order to make a base for creating rapidly digital menu for restaurant. This project is born following the COVID-19 crisis and the need to set up contactless solution for businesses.",
+      "The goal is also to provide a QR code printed to be sticked on the restaurant tables. Customers will scan the QR code to access the menu.",
+      "It is created with next.js technology and material-ui component library. It also features menu translation thanks to next-translate. It is based on JAMStack and can be deployed on Netlify.",
+      "You can view an example in production of this template for a client I create a digital menu here: https://orabbits.netlify.app"
+    ],
+    "features": [
+      "i18n",
+      "Rendu côté serveur (next.js)",
+      "Librairie Material-ui / styled-components",
+      "Design Responsif"
+    ],
+    "next-steps": ["Lié à une base de donnée grâce à GraphQL"],
+    "enhancements": [
+      "Ajouter une interface d'administration pour gérer le contenu dynamiquement comme la couleur du thème graphique, les sections, les articles ou ajouter des images",
+      "Rendre le site fonctionnel hors-ligne"
+    ]
+  },
+  "en": {
+    "desc": [
+      "This project is a template I realized in order to make a base for creating rapidly digital menu for restaurant. This project is born following the COVID-19 crisis and the need to set up contactless solution for businesses.",
+      "The goal is also to provide a QR code printed to be sticked on the restaurant tables. Customers will scan the QR code to access the menu.",
+      "It is created with next.js technology and material-ui component library. It also features menu translation thanks to next-translate. It is based on JAMStack and can be deployed on Netlify.",
+      "You can view an example in production of this template for a client I create a digital menu here: https://orabbits.netlify.app"
+    ],
+    "features": [
+      "i18n",
+      "Server-side rendering (next.js)",
+      "Material-ui library / styled-components",
+      "Responsive design"
+    ],
+    "next-steps": ["Link to a database thanks to GraphQL"],
+    "enhancements": [
+      "Add an administration interface to manage content dynamically like color theme, sections, articles, adding images",
+      "Add offline support"
+    ]
+  },
+  "techno": [
+    "Next.js",
+    "ESLint",
+    "Babel",
+    "Webpack",
+    "Material-UI",
+    "Styled-Components",
+    "Next-Translate- Netlify"
+  ]
+}

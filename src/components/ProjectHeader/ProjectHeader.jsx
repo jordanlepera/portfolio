@@ -38,13 +38,6 @@ const iconList = [
   },
 ]
 
-const techno = [
-  { name: "React Native" },
-  { name: "GraphQL" },
-  { name: "Redux" },
-  { name: "MongoDB" },
-]
-
 const calculateAccessibleTextColor = (hexacode) => {
   return parseInt(hexacode.substring(1), 16) > 15099493 ? "#3D3D3D" : "white"
 }
@@ -60,12 +53,21 @@ type ProjectData = {
 
 const ProjectHeader = (props: ProjectData) => {
   const { projectData } = props
+  const [techno, setTechno] = React.useState(null)
   const { t } = useTranslation()
   const matches = useMediaQuery("(max-width: 959px)")
   const { loading, error, data } = useQuery(QueryService.getProject(), {
     variables: { projectData },
     errorPolicy: "all",
   })
+
+  React.useEffect(() => {
+    import(`../../documents/projects/${projectData}.json`)
+      .then((pageDataJson) => {
+        setTechno(pageDataJson.techno)
+      })
+      .catch((err) => console.log(err.message))
+  }, [projectData])
 
   if (loading) return <Loading />
   if (error)
@@ -100,7 +102,7 @@ const ProjectHeader = (props: ProjectData) => {
   ))
 
   const technoChips = techno.map((elem) => (
-    <ChipStyled key={uniqueId("techno-chip-")} label={elem.name} />
+    <ChipStyled key={uniqueId("techno-chip-")} label={elem} />
   ))
 
   return (

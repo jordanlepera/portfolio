@@ -1,0 +1,70 @@
+{
+  "fr": {
+    "desc": [
+      "Briscola is an Italian card game. It is played with piacentine cards. This game is based on web technologies. An express.js server handles games session server side and it uses React.js library for the front with custom Webpack, Babel, EsLint configuration. Also, it is created with a clean Dev / Prod environment.",
+      "The server will use Socket.io to manage bidirectional communication between clients and server."
+    ],
+    "features": [
+      "i18n",
+      "Serveur Express.js personnalisé",
+      "Configuration Webpack personnalisée",
+      "Configurationa Babel personnalisée",
+      "Configuration ESLint personnalisée",
+      "Environnement dev/prod propre",
+      "Design responsif",
+      "Base de donnée MongoDB",
+      "GraphQL / Apollo Client"
+    ],
+    "next-steps": [
+      "Créer la logique serveur",
+      "Créer les éléments graphiques",
+      "Développer l'interface de jeu",
+      "Integrer GraphQL / Apollo Client",
+      "Créer la base de donnée MongoDB",
+      "Ajouter une IA avec laquelle jouer"
+    ],
+    "enhancements": []
+  },
+  "en": {
+    "desc": [
+      "Briscola is an Italian card game. It is played with piacentine cards. This game is based on web technologies. An express.js server handles games session server side and it uses React.js library for the front with custom Webpack, Babel, EsLint configuration. Also, it is created with a clean Dev / Prod environment.",
+      "The server will use Socket.io to manage bidirectional communication between clients and server."
+    ],
+    "features": [
+      "i18n",
+      "Custom Express.js server",
+      "Custom Webpack",
+      "Babel",
+      "ESLint configuration",
+      "Clean dev / prod environment",
+      "Responsive design",
+      "MongoDB database",
+      "GraphQL / Apollo Client"
+    ],
+    "next-steps": [
+      "Create server logic",
+      "Create graphics assets",
+      "Develop game interface",
+      "Integrate GraphQL / Apollo Client",
+      "Create mongoDB database",
+      "Add an AI to play with"
+    ],
+    "enhancements": []
+  },
+  "techno": [
+    "React.js",
+    "Node.js",
+    "GraphQL",
+    "Express.js",
+    "ESLint",
+    "Flow",
+    "React-Router",
+    "React-i18next",
+    "Material-UI",
+    "Storybook",
+    "Jest",
+    "Enzyme",
+    "Socket.io",
+    "Heroku"
+  ]
+}

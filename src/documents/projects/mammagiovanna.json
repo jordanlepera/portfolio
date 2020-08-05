@@ -1,0 +1,48 @@
+{
+  "fr": {
+    "desc": [
+      "Mamma Giovanna est un restaurant italien basé à Colmar en France. Ce projet est son site web qui vise à informer des heures d'ouvertures, moyen de contact, des réseaux sociaux, de la carte et d'autres éléments.",
+      "Le projet se base sur next.js pour un rendu côté serveur et utilise la librairie de composant de material-ui. Le site web est traduit en 4 langues (actuellement Français, Anglais, Allemand et Italien).",
+      "Ce projet est un fork de menu-i18n-template, Ils ont donc plsu ou moins la même roadmap."
+    ],
+    "features": [
+      "i18n",
+      "Rendu côté serveur (next.js)",
+      "Librairie Material-ui / styled-components",
+      "Design Responsif"
+    ],
+    "next-steps": ["Lié à une base de donnée grâce à GraphQL"],
+    "enhancements": [
+      "Ajouter une interface d'administration pour gérer le contenu dynamiquement comme la couleur du thème graphique, les sections, les articles ou ajouter des images",
+      "Rendre le site fonctionnel hors-ligne"
+    ]
+  },
+  "en": {
+    "desc": [
+      "Mamma Giovanna is an italian restaurant based in Colmar, France. This project is its website, aiming to give information about working hours, way of contact, social network, menu and additional information.",
+      "It is based on next.js to render it server side and makes use of material-ui component library and provide users with 4 translations (currently French, English, German and Italian).",
+      "This project is a fork of the menu-i18n-template so it basically have the same roadmap."
+    ],
+    "features": [
+      "i18n",
+      "Server-side rendering (next.js)",
+      "Material-ui library / styled-components",
+      "Responsive design"
+    ],
+    "next-steps": ["Link to a database thanks to GraphQL"],
+    "enhancements": [
+      "Add an administration interface to manage content dynamically like color theme, sections, articles, adding images",
+      "Add offline support"
+    ]
+  },
+  "techno": [
+    "Next.js",
+    "ESLint",
+    "Babel",
+    "Webpack",
+    "Material-UI",
+    "Styled-Components",
+    "Next-Translate",
+    "Firebase"
+  ]
+}

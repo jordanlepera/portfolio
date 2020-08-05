@@ -1,0 +1,59 @@
+{
+  "fr": {
+    "desc": [
+      "Portfolio est en fait le site sur lequel vous lisez ces lignes ! C'est un site web pour exposer mes projets, et un blog ou je vais écrire des articles en rapport avec la programmation et d'autres sujets comme le design ou encore la musique électronique.",
+      "Faîtes-vous plaisir si vous souhaitez forker ce dépôt !"
+    ],
+    "features": [
+      "i18n",
+      "Integration de l'API GraphQL de Github",
+      "Page contenant projets et articles",
+      "Design Responsif",
+      "GraphQL / Apollo Client"
+    ],
+    "next-steps": [
+      "Améliorer le support de l'affichage en 4K",
+      "Ajouter une base de donnée MongoDB pour stocker les articles"
+    ],
+    "enhancements": [
+      "Ajouter une interface d'administration pour gérer le contenu dynamiquement comme la couleur du thème graphique, les sections, les articles",
+      "Passer sur un système de rendu côté serveur comme Next.js"
+    ]
+  },
+  "en": {
+    "desc": [
+      "Portfolio is actually the current site you are reading these lines on ! It is a website to expose my projects, and a blog where I will write articles about programming and others topics like design, electronic music.",
+      "You can feel free to fork it !"
+    ],
+    "features": [
+      "i18n",
+      "Github GraphQL API integration",
+      "Projects and Articles pages",
+      "Responsive design",
+      "GraphQL / Apollo Client"
+    ],
+    "next-steps": [
+      "Improve 4K support",
+      "Add a mongoDB database to store articles"
+    ],
+    "enhancements": [
+      "Add an administration interface to manage content dynamically like pages, project or articles",
+      "Passing on a server-side rendering system like Next.js or Gatsby.js"
+    ]
+  },
+  "techno": [
+    "React.js",
+    "GraphQL",
+    "ESLint",
+    "Flow",
+    "Styled-Components",
+    "React-Router",
+    "React-i18next",
+    "React-Flip-Toolkit",
+    "Material-UI",
+    "Create-React-App",
+    "Jest",
+    "Enzyme",
+    "Netlify"
+  ]
+}

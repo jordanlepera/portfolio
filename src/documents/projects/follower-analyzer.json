@@ -1,0 +1,43 @@
+{
+  "fr": {
+    "desc": [
+      "Un script python qui utilise un outil de scraping pour instagram pour se connecter à votre compte et exporter des analytiques. Le script peut exporter les données au format CSV ou juste les afficher dans la console. Vous pouvez donc voir apparaitre:",
+      "Les personnes que vous suivez\nLes personnes qui vous suivent\nLes personnes que vous suivez qui ne vous suivent pas\nLes personnes que te suive et que tu ne suis pas\nLes comptes certifiés que tu suis\nLes comtpes certifiés qui te suive"
+    ],
+    "features": [
+      "Python (multiplatforme)",
+      "Outil en ligne de commande",
+      "Connexion au compte instagram",
+      "Export des analytiques sur les followers en CSV ou juste affiché dans la console"
+    ],
+    "next-steps": [
+      "Ajouter une interface graphique agréable avec Electron.js",
+      "Ajouter d'autres automatisations comme : Suivre/Arrêter de suivre des comptes en masse, générer les meilleurs hashtags pour une publication, analytique de visionnage des stories"
+    ],
+    "enhancements": [
+      "Héberger le service sur une lambda pour le rendre accessible depuis plusieurs types de clients",
+      "Créer une application client mobile avec React Native pour iOS et Android"
+    ]
+  },
+  "en": {
+    "desc": [
+      "A python script using instagram scraping tool to connect to your account and export followers analytic. It can export data in CSV format or just displays data in terminal. You can so see:",
+      "The person you are following\nThe person that are following you\nThe person you follow that don’t follow you\nThe person following you that you don’t follow\nThe certified account you follow\nThe certified account that follow you"
+    ],
+    "features": [
+      "Python (cross-platform)",
+      "Command line based tool",
+      "Connection to instagram account",
+      "Export follower analytic to CSV or just display on console"
+    ],
+    "next-steps": [
+      "Add a user-friendly graphic interface with electron.js",
+      "Add other automations like : mass follow/unfollow account, hashtag generator for publication, stories viewer analytic"
+    ],
+    "enhancements": [
+      "Host service on lambda to make it available for several type of clients",
+      "Create a client mobile app with React Native for iOS and Android"
+    ]
+  },
+  "techno": ["Python", "Instagram API", "CSV"]
+}

@@ -14,8 +14,6 @@ import About from "../../pages/About/About"
 import Project from "../Project/Project"
 import Loading from "../Loading/Loading"
 import NotFound from "../NotFound/NotFound"
-// import mammagiovanna from "../../documents/projects/mammagiovanna.md"
-// import * from "../../documents/articles"
 
 const ArticlePage = () => {
   const { articleId } = useParams()
