@@ -1,8 +1,8 @@
 {
   "fr": {
     "desc": [
-      "Briscola is an Italian card game. It is played with piacentine cards. This game is based on web technologies. An express.js server handles games session server side and it uses React.js library for the front with custom Webpack, Babel, EsLint configuration. Also, it is created with a clean Dev / Prod environment.",
-      "The server will use Socket.io to manage bidirectional communication between clients and server."
+      "Briscola est un jeu de carte italien. Il est joué avec les piacentines (cartes italiennes). Ce jeu est basé sur des technologies web. Un serveur Express.js gère les sessions de jeu côté serveur et la librairie React.js est utilisée pour le front avec une configuration personnalisée de Babel, Webpack et ESLint. Ce projet à été créé avec un environnement Dev/Prod bien organisé.",
+      "Le serveur utilise Socket.io pour gérer les communications bidirectionnelles entre les clients et le serveur."
     ],
     "features": [
       "i18n",
