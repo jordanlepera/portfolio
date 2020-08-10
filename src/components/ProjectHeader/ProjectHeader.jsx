@@ -13,6 +13,7 @@ import {
   FaCss3Alt,
   FaHtml5,
   FaPython,
+  FaJava,
   FaCode,
 } from "react-icons/fa"
 import Loading from "../Loading/ComponentLoading"
@@ -35,6 +36,10 @@ const iconList = [
   {
     name: "Python",
     icon: <FaPython />,
+  },
+  {
+    name: "Java",
+    icon: <FaJava />,
   },
 ]
 

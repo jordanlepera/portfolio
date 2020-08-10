@@ -11,6 +11,7 @@ import {
   FaCss3Alt,
   FaHtml5,
   FaPython,
+  FaJava,
   FaCode,
 } from "react-icons/fa"
 import projectPlaceholder from "../../img/project-placeholder.svg"
@@ -36,6 +37,10 @@ const iconList = [
   {
     name: "Python",
     icon: <FaPython />,
+  },
+  {
+    name: "Java",
+    icon: <FaJava />,
   },
 ]
 
