@@ -30,9 +30,18 @@ const Project = (props: Props) => {
       .catch((err) => console.log(err.message))
   }, [projectData])
 
+  const checkContentSection = (sectionName) => {
+    if (pageData) {
+      if (pageData[i18n.language.substr(0, 2)][sectionName].length !== 0) {
+        return true
+      }
+    }
+    return false
+  }
+
   const Description = () =>
     pageData
-      ? pageData[i18n.language].desc.map((desc) => (
+      ? pageData[i18n.language.substr(0, 2)].desc.map((desc) => (
           <div key={uniqueId("desc-")}>
             <Typography variant="body2">{desc}</Typography>
             <br />
@@ -42,21 +51,21 @@ const Project = (props: Props) => {
 
   const Features = () =>
     pageData
-      ? pageData[i18n.language].features.map((feature) => (
+      ? pageData[i18n.language.substr(0, 2)].features.map((feature) => (
           <li key={uniqueId("feature-")}>{feature}</li>
         ))
       : ""
 
   const NextSteps = () =>
     pageData
-      ? pageData[i18n.language]["next-steps"].map((step) => (
+      ? pageData[i18n.language.substr(0, 2)]["next-steps"].map((step) => (
           <li key={uniqueId("step-")}>{step}</li>
         ))
       : ""
 
   const Enhancements = () =>
     pageData
-      ? pageData[i18n.language].enhancements.map((enhancement) => (
+      ? pageData[i18n.language.substr(0, 2)].enhancements.map((enhancement) => (
           <li key={uniqueId("enhancements-")}>{enhancement}</li>
         ))
       : ""
@@ -86,7 +95,7 @@ const Project = (props: Props) => {
               <Features />
             </Typography>
           </ul>
-          {pageData && pageData[i18n.language]["next-steps"].length !== 0 ? (
+          {checkContentSection("next-steps") ? (
             <>
               <Typography variant="h4">
                 {t("project-page.next-steps")}
@@ -100,7 +109,7 @@ const Project = (props: Props) => {
           ) : (
             ""
           )}
-          {pageData && pageData[i18n.language].enhancements.length !== 0 ? (
+          {checkContentSection("enhancements") ? (
             <>
               <Typography variant="h4">
                 {t("project-page.enhancements")}
